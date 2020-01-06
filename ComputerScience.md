@@ -3,11 +3,15 @@
 https://www.bigocheatsheet.com/
 
 # Data structure and Algorithm and Design Questions
-## Algorithm and Design: Number, String, Matrix, Design, Tree, Permutation, Backtracking are Basic. 
-## Need to know the basic questions about Dynamic Programing. 
-## Need to understand about Graph and Linked list
+- Algorithm and Design: Number, String, Matrix, Design, Tree, Permutation, Backtracking are Basic. 
+- Need to know the basic questions about Dynamic Programing. 
+- Need to understand about Graph and Linked list
 
-* 1. Two Sum
+**You need to solve the questions in the https://codepen.io/ and need to submit them the https://leetcode.com/problemset/algorithms/.**
+**You need to add the answer at the end of the questoin here**
+**The answer should have the comments why you did like that**
+
+**1. Two Sum**
 
 Given an array of integers, 
 return indices of the two numbers such that they add up to a specific target.
@@ -24,7 +28,7 @@ return [0, 1].
 
 Link: https://leetcode.com/problems/two-sum/
 
-* 339. Nested List Weight Sum
+**339. Nested List Weight Sum**
 
 Given a nested list of integers, 
 return the sum of all integers in the list weighted by their depth.
@@ -46,7 +50,7 @@ Explanation: One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3; 1 + 4*2 +
 
 Link: https://leetcode.com/problems/nested-list-weight-sum/
 
-* 341. Flatten Nested List Iterator
+**341. Flatten Nested List Iterator**
 Given a nested list of integers, implement an iterator to flatten it.
 
 Each element is either an integer, or a list 

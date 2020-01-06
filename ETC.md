@@ -15,6 +15,5 @@ https://youtu.be/x4q86IjJFag
 
 # Buy Macbook Pro 15inch 2014 ~ 2020
 # Trend: https://2019.stateofjs.com/
-# Leetcode: https://leetcode.com/problemset/algorithms/
 # Git GUI tool: https://www.sourcetreeapp.com/
 # Github Markdown Basic: https://guides.github.com/features/mastering-markdown/
