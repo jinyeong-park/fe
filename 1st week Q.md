@@ -6,3 +6,4 @@ Algorithm and Design: Number, String, Matrix, Design, Tree, Permutation-backtrac
 - VS Code
 - Git hub setting: Source Tree
 - FE coding test tool and debug
+- Buy Macbook Pro 15inch 2014 ~ 2020
