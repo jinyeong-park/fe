@@ -5,7 +5,10 @@ Big O 정리 표에서, Array, Stack, Queue, Hash Table, BST, BT는 필수이고
 2. VS Code 설치하고, https://github.com/helpdp/fe repository를 로컬에 clone하고 1st-week-Q.md 파일에 있는 Action Items를 수행하고 결과를 "1st-week-A.md"파일에 업데이트 하고 push하기.
 3. Use Chrome Javascript Development tools. Learn How to debug javascript.
 4. Complete Module 0: Building Blocks Intro https://learn-2.galvanize.com/cohorts/1676
-5. Leetcode 가입하고 아래 Algorithm 문제 풀고 Submit하기, 코딩 한 것을 https://codepen.io/ 에 가입해서 실행해 보기.
+5. 아래 내용 영어 말하기 연습: 하루에 아침에 한번 저녁에 한번 30분씩 남에게 말해주듯이 말하기. youtube내용 완독하고 이해하기.
+https://www.facebook.com/groups/tedtech/permalink/500336330608092/
+
+6. Leetcode 가입하고 아래 Algorithm 문제 풀고 Submit하기, 코딩 한 것을 https://codepen.io/ 에 가입해서 실행해 보기.
 
 1. Two Sum
 
