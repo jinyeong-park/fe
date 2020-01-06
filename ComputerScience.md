@@ -7,7 +7,7 @@ https://www.bigocheatsheet.com/
 - Need to know the basic questions about Dynamic Programing. 
 - Need to understand about Graph and Linked list
 
-**You need to solve the questions in the https://codepen.io/ and need to submit them the https://leetcode.com/problemset/algorithms/.**
+**You need to solve the questions in the <https://repl.it/languages/javascript> and need to submit them the <https://leetcode.com/problemset/algorithms/.>**
 **You need to add the answer at the end of the questoin here**
 **The answer should have the comments why you did like that**
 
@@ -26,7 +26,7 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
-Link: https://leetcode.com/problems/two-sum/
+Link: <https://leetcode.com/problems/two-sum/>
 
 **339. Nested List Weight Sum**
 
