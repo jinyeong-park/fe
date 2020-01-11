@@ -17,7 +17,7 @@ https://youtu.be/VqCgcpAypFQ
 <https://youtu.be/H0XScE08hy8>
 <https://youtu.be/x4q86IjJFag>
 
-# Buy Macbook Pro 15inch 2014 ~ 2020
+# Buy Macbook Pro 15inch 2014 ~ 2020 - Done
 
 # Trend: https://2019.stateofjs.com/
 

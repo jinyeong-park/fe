@@ -4,6 +4,7 @@
 ## Complete Udemy "The Complete Javascript Course 2020" Section 2 & 3. <https://www.udemy.com/course/the-complete-javascript-course/>
 
 ## Q. Explain var vs let vs const
+<https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e>
 
 ## Q. Can you give an example for destructuring an object or an array?
 
@@ -19,11 +20,13 @@
 
 ## Q. Difference between: function Person(){}, var person = Person(), and var person = new Person()?
 
-## Q. Explain Function.prototype.bind.
+## Q. Explain Function.prototype.bind, call, apply.
 
 ## Q. Explain "hoisting".
 
 ## Q. What is the difference between MyObject.foo and MyObject.prototype.foo?
+
+## Q. Explain IIFE with Example.
 
 # HTML Question
 # CSS Question
