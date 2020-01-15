@@ -7,8 +7,9 @@ https://www.bigocheatsheet.com/
 - Need to know the basic questions about Dynamic Programing. 
 - Need to understand about Graph and Linked list
 
-**You need to solve the questions in the <https://repl.it/languages/javascript> and need to submit them the <https://leetcode.com/problemset/algorithms/.>**
-**You need to add the answer at the end of the questoin here**
+**You need to solve the questions with online editors like <http://collabedit.com/> or <https://codepen.io/> or <https://repl.it/languages/javascript> and need to submit them the <https://leetcode.com/problemset/algorithms/.>**
+
+**You need to add the answer at the end of the questoin**
 **The answer should have the comments why you did like that**
 
 **1. Two Sum**
