@@ -4,8 +4,6 @@
 
 * Q. Install VS Code
 https://youtu.be/VqCgcpAypFQ
-* Visual Studio Code & Git, Github User Guide(Korean version)
-https://www.youtube.com/watch?v=qkRuIUSdXnw
 
 # Github Basic Command
 
@@ -13,11 +11,6 @@ https://www.youtube.com/watch?v=qkRuIUSdXnw
 <https://youtu.be/USjZcfj8yxE>
 
 # Chrome Javascript Development tools
-
-* Q. Learn How to debug javascript
-<https://learn-2.galvanize.com/cohorts/1676/blocks/74/content_files/JS_Overview/lesson.md>
-<https://youtu.be/H0XScE08hy8>
-<https://youtu.be/x4q86IjJFag>
 
 # Buy Macbook Pro 15inch 2014 ~ 2020 - Done
 

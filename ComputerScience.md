@@ -11,6 +11,7 @@ https://www.bigocheatsheet.com/
 
 **You need to add the answer at the end of the questoin**
 **The answer should have the comments why you did like that**
+**The question number is the same as Leetcode question number**
 
 **1. Two Sum**
 
