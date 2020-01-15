@@ -4,6 +4,8 @@
 
 * Q. Install VS Code
 https://youtu.be/VqCgcpAypFQ
+* Visual Studio Code & Git, Github User Guide(Korean version)
+https://www.youtube.com/watch?v=qkRuIUSdXnw
 
 # Github Basic Command
 
