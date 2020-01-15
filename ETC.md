@@ -1,21 +1,25 @@
-# Goal: Start interview from the middle of August.
+# Goal: Start interview from the middle of August
 
-# VS Code
+## VS Code
 
 * Q. Install VS Code
-https://youtu.be/VqCgcpAypFQ
+<https://youtu.be/VqCgcpAypFQ>
 
-# Github Basic Command
+## Github Basic Command
 
 * Q. Create your own repository for preparing the interview.
 <https://youtu.be/USjZcfj8yxE>
 
-# Chrome Javascript Development tools
+## Trend:
 
-# Buy Macbook Pro 15inch 2014 ~ 2020 - Done
+<https://2019.stateofjs.com/>
 
-# Trend: https://2019.stateofjs.com/
+## Git GUI tool:
 
-# Git GUI tool: https://www.sourcetreeapp.com/
+<https://www.sourcetreeapp.com/>
 
-# Github Markdown Basic: https://guides.github.com/features/mastering-markdown/
+## Github Markdown Basic:
+
+<https://guides.github.com/features/mastering-markdown/>
+
+## Rule: You can add your solution into your files like FrontEnd-JongMinKim.md etc. Also, you should update your files on your branch and you can make Pull Request for every week
