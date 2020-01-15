@@ -1,9 +1,11 @@
 # Javascript Questions 
+
 **FYI: ES6 <http://es6-features.org/>**
 
-## Optional: Complete Udemy "The Complete Javascript Course 2020" Section 2 & 3. <https://www.udemy.com/course/the-complete-javascript-course/>
+**Optional: Complete Udemy "The Complete Javascript Course 2020" <https://www.udemy.com/course/the-complete-javascript-course/>**
 
 ## Q. Explain var vs let vs const
+
 <https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e>
 
 ## Q. Can you give an example for destructuring an object or an array?
