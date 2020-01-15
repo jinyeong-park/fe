@@ -29,6 +29,8 @@
 * Ref Set: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Set
 
 ## Q. Difference between: function Person(){}, var person = Person(), and var person = new Person()?
+* Ref1. Function Declaration vs Function Expression: https://unikys.tistory.com/305
+* Ref2. Function: https://blog.naver.com/kangminser88/221230305688
 
 ## Q. Explain Function.prototype.bind, call, apply.
 * Ref Function.prototype.apply(): https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
