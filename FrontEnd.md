@@ -43,7 +43,7 @@
 * Ref Object.prototype: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype
 
 ## Q. Explain IIFE with Example.
-# A. JavaScript IIFE: https://blog.naver.com/weekamp/221700850160
+* A. JavaScript IIFE: https://blog.naver.com/weekamp/221700850160
 
 # HTML Question
 # CSS Question
