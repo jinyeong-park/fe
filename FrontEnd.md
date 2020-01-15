@@ -23,6 +23,7 @@
 ## Q. Explain Function.prototype.bind, call, apply.
 
 ## Q. Explain "hoisting".
+* A. Hoisting : https://yuddomack.tistory.com/entry/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85Hoisting
 
 ## Q. What is the difference between MyObject.foo and MyObject.prototype.foo?
 
