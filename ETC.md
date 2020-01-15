@@ -1,7 +1,7 @@
 # Goal: Start interview from the middle of August
 
 ## Developer Roadmaps
-https://roadmap.sh/
+* https://roadmap.sh/
 ## VS Code
 
 * Q. Install VS Code
