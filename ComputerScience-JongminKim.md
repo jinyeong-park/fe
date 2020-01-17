@@ -28,6 +28,20 @@ return [0, 1].
 
 Link: <https://leetcode.com/problems/two-sum/>
 
+var twoSum = function(nums, target) {
+    var number = [];
+    for(var i = 0; i < nums.length; i++){
+        for(var j = i + 1; j < nums.length; j++){
+            if(nums[i] + nums[j] == target){
+                number.push(i);
+                number.push(j);
+                return number;
+            }
+        }
+    }
+   
+};
+
 **339. Nested List Weight Sum**
 
 Given a nested list of integers, 
