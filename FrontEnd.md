@@ -2,11 +2,11 @@
 
 **FYI: ES6 <http://es6-features.org/>**
 **FYI: <https://github.com/h5bp/Front-end-Developer-Interview-Questions>**
+**FYI: Javascript Reference: https://developer.mozilla.org/en-US/**
 
 **Optional: Complete Udemy "The Complete Javascript Course 2020" <https://www.udemy.com/course/the-complete-javascript-course/>**
 
 ## Q. Explain var vs let vs const
-
 <https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e>
 
 ## Q. Can you give an example for destructuring an object or an array?
@@ -32,6 +32,8 @@
 ## Q. Explain IIFE with Example.
 
 ## Q. Explain Event Loop
+
+## Q. Critical Rendering Path? <https://developers.google.com/web/fundamentals/performance/critical-rendering-path>
 
 # HTML Question
 
