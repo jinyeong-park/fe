@@ -35,6 +35,8 @@
 
 ## Q. Critical Rendering Path? <https://developers.google.com/web/fundamentals/performance/critical-rendering-path>
 
+## Q. What's the difference between a variable that is: null, undefined or undeclared? How would you go about checking for any of these states?
+
 # HTML Question
 
 # CSS Question
