@@ -101,7 +101,43 @@ minStack.getMin();   --> Returns -3.
 minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
+```
+var MinStack = function() {
+    this.array = [];
+};
 
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MinStack.prototype.push = function(x) {
+    this.array.push(x);
+};
+
+/**
+ * @return {void}
+ */
+MinStack.prototype.pop = function() {
+    this.array.pop();
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.top = function() {
+    return this.array[this.array.length - 1];
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.getMin = function() {
+    let min = Infinity;
+    for(let n of this.array){
+      min = Math.min(min, n);
+    }
+};
+```
 **706. Design HashMap**
 Design a HashMap without using any built-in hash table libraries.
 
