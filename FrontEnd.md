@@ -99,7 +99,7 @@ var classList = ["Joe", "Jack", "John", "Fred", "Frank", "Barry", "Larry", "Mary
 
 ``` 
 
-### Implement Contact List by ES6 Class
+### Implement List by ES6 Class
 
 #### Features
 
