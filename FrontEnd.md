@@ -110,7 +110,9 @@ var classList = ["Joe", "Jack", "John", "Fred", "Frank", "Barry", "Larry", "Mary
 5. Optional features: Add / Delete / Update
 
 ```
-const contacts = {
+class Contacts {}
+
+const data = {
     data: {
         prop1: "abc",
         prop2: "def",
@@ -143,6 +145,15 @@ const contacts = {
         prop29: "yz"
     }
 }
+
+const containerEl = document.createElement('div');
+document.body.appendChild(containerEl);
+
+// render contact list into containerEl.
+new Contacts({
+  containerEl,
+  data
+});
 ```
 
 ## Unit Test 
