@@ -147,7 +147,7 @@ Please do not use the built-in HashMap library.
 
 Don't use Map object.
 
-* 796. Ratate String
+* 796. Rotate String
 We are given two strings, A and B.
 
 A shift on A consists of taking string A and moving the leftmost character to the rightmost position. For example, if A = 'abcde', then it will be 'bcdea' after one shift on A. Return True if and only if A can become B after some number of shifts on A.
@@ -302,3 +302,51 @@ Example 2:
 
 Input: "cbbd"
 Output: "bb"
+
+* Transpose string
+
+You will be given an array that contains two strings. Your job is to create a function that will take those two strings and transpose them, so that the strings go from top to bottom instead of left to right.
+
+e.g. transposeTwoStrings(['Hello','World']);
+
+should return:
+H W  
+e o  
+l r  
+l l  
+o d
+
+* Flip every pair of characters in a string.
+
+Example:
+var input = 'check out how interesting this problem is, it\'s insanely interesting!';
+var output = flipPairs(input);
+console.log(output); // --> hcce kuo toh wnietertsni ghtsip orlbmei ,si 't sniasenyli tnreseitgn!
+
+* Flip every chunk of n characters in a string, where n is any positive integer greater than 1.
+
+Note that this is intentionally very similar to the previous problem.
+
+Please focus on getting a working solution with the tools you know well.
+
+Practice the interactive/collaborative interview style that's described in the documentation.
+
+Example:
+var input = 'a short example';
+var output = flipEveryNChars(input, 5);
+console.log(output); // --> ohs axe trelpma
+
+Breaking this example down piece by piece:
+'a sho' -> 'ohs a'
+'rt ex' -> 'xe tr'
+'ample' -> 'elpma'
+
+-> 'ohs axe trelpma'
+
+* Given a string of even and odd numbers, find which is the sole even number or the sole odd number.
+
+The return value should be 1-indexed, not 0-indexed.
+
+Examples :
+detectOutlierValue("2 4 7 8 10"); // => 3 - Third number is odd, while the rest of the numbers are even
+detectOutlierValue("1 10 1 1");  //=> 2 - Second number is even, while the rest of the numbers are odd
