@@ -1,11 +1,15 @@
-# Big O Concept
+# Algorithm and Data Structure and Design
+
+## Big O Concept
+
 * Array, Stack, Queue, Hash Table, BST, BT are important. Understand Quicksort, Mergesort.
 https://www.bigocheatsheet.com/
 
-# Data structure and Algorithm and Design Questions
-- Algorithm and Design: Number, String, Matrix, Design, Tree, Permutation, Backtracking are Basic. 
-- Need to know the basic questions about Dynamic Programing. 
-- Need to understand about Graph and Linked list
+## Data structure and Algorithm and Design Questions
+
+* Algorithm and Design: Number, String, Matrix, Design, Tree, Permutation, Backtracking are Basic. 
+* Need to know the basic questions about Dynamic Programing. 
+* Need to understand about Graph and Linked list
 
 **You need to solve the questions with online editors like <http://collabedit.com/> or <https://codepen.io/> or <https://repl.it/languages/javascript> and need to submit them the <https://leetcode.com/problemset/algorithms/.>**
 
@@ -13,7 +17,9 @@ https://www.bigocheatsheet.com/
 **The answer should have the comments why you did like that**
 **The question number is the same as Leetcode question number**
 
-* 1. Two Sum
+## Questons
+
+### 1. Two Sum
 
 Given an array of integers, 
 return indices of the two numbers such that they add up to a specific target.
@@ -30,7 +36,7 @@ return [0, 1].
 
 Link: <https://leetcode.com/problems/two-sum/>
 
-* 339. Nested List Weight Sum
+### 339. Nested List Weight Sum
 
 Given a nested list of integers, 
 return the sum of all integers in the list weighted by their depth.
@@ -52,7 +58,8 @@ Explanation: One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3; 1 + 4*2 +
 
 Link: <https://leetcode.com/problems/nested-list-weight-sum/>
 
-* 341. Flatten Nested List Iterator
+### 341. Flatten Nested List Iterator
+
 Given a nested list of integers, implement an iterator to flatten it.
 
 Each element is either an integer, or a list 
@@ -73,7 +80,8 @@ Explanation: By calling next repeatedly until hasNext returns false,
 
 Link: <https://leetcode.com/problems/flatten-nested-list-iterator/>
 
-* 155. Min Stack
+### 155. Min Stack
+
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 push(x) -- Push element x onto stack.
@@ -90,7 +98,8 @@ minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
 
-* 716. Max Stack
+### 716. Max Stack
+
 Design a max stack that supports push, pop, top, peekMax and popMax.
 
 push(x) -- Push element x onto stack.
@@ -115,7 +124,8 @@ Note:
 Number of operations won't exceed 10000.
 The last four operations won't be called when stack is empty.
 
-* 706. Design HashMap
+### 706. Design HashMap
+
 Design a HashMap without using any built-in hash table libraries.
 
 To be specific, your design should include these functions:
@@ -147,7 +157,8 @@ Please do not use the built-in HashMap library.
 
 Don't use Map object.
 
-* 796. Rotate String
+### 796. Rotate String
+
 We are given two strings, A and B.
 
 A shift on A consists of taking string A and moving the leftmost character to the rightmost position. For example, if A = 'abcde', then it will be 'bcdea' after one shift on A. Return True if and only if A can become B after some number of shifts on A.
@@ -166,7 +177,7 @@ A and B will have length at most 100.
 
 <https://leetcode.com/problems/rotate-string/>
 
-* 704. Binary Search
+### 704. Binary Search
 
 Given a sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums. If target exists, then return its index, otherwise return -1.
 
@@ -190,7 +201,7 @@ The value of each element in nums will be in the range [-9999, 9999].
 
 <https://leetcode.com/problems/binary-search/>
 
-* 700. Search in a Binary Search Tree
+### 700. Search in a Binary Search Tree
 
 Given the root node of a binary search tree (BST) and a value. You need to find the node in the BST that the node's value equals the given value. Return the subtree rooted with that node. If such node doesn't exist, you should return NULL.
 
@@ -215,7 +226,7 @@ Note that an empty tree is represented by NULL, therefore you would see the expe
 
 <https://leetcode.com/problems/search-in-a-binary-search-tree/>
 
-* Isograms
+### Isograms
 
 An isogram is a word that has no repeating letters, consecutive or non-consecutive. Your task is to write and test a function that determines whether a string is an isogram, following the format of the previous problems. It should return true if the input string is an isogram, and should return false otherwise.
 
@@ -234,7 +245,7 @@ function isIsogram(text) {
 }
 ```
 
-* find first word with most repeated chars
+### find first word with most repeated chars
 
 ```
 function findMaxRepeatCountInWord(word) {
@@ -257,7 +268,7 @@ var expectedWord = "banana";
 console.log(actualWord, expectedWord, "display");
 ```
 
-* 125. Valid Palindrome
+### 125. Valid Palindrome
 
 Given a string, determine if it is a palindrome, 
 considering only alphanumeric characters and ignoring cases.
@@ -274,7 +285,8 @@ Example 2:
 Input: "race a car"
 Output: false
 
-* 680. Valid Palindrome II
+### 680. Valid Palindrome II
+
 Given a non-empty string s, you may delete at most one character. 
 Judge whether you can make it a palindrome.
 
@@ -290,7 +302,8 @@ Note:
 The string will only contain lowercase characters a-z. 
 The maximum length of the string is 50000.
 
-* 5. Longest Palindromic Substring
+### 5. Longest Palindromic Substring
+
 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 
 Example 1:
@@ -303,7 +316,7 @@ Example 2:
 Input: "cbbd"
 Output: "bb"
 
-* Transpose string
+### Transpose string
 
 You will be given an array that contains two strings. Your job is to create a function that will take those two strings and transpose them, so that the strings go from top to bottom instead of left to right.
 
@@ -316,14 +329,14 @@ l r
 l l  
 o d
 
-* Flip every pair of characters in a string.
+### Flip every pair of characters in a string.
 
 Example:
 var input = 'check out how interesting this problem is, it\'s insanely interesting!';
 var output = flipPairs(input);
 console.log(output); // --> hcce kuo toh wnietertsni ghtsip orlbmei ,si 't sniasenyli tnreseitgn!
 
-* Flip every chunk of n characters in a string, where n is any positive integer greater than 1.
+### Flip every chunk of n characters in a string, where n is any positive integer greater than 1.
 
 Note that this is intentionally very similar to the previous problem.
 
@@ -343,7 +356,7 @@ Breaking this example down piece by piece:
 
 -> 'ohs axe trelpma'
 
-* Given a string of even and odd numbers, find which is the sole even number or the sole odd number.
+### Given a string of even and odd numbers, find which is the sole even number or the sole odd number.
 
 The return value should be 1-indexed, not 0-indexed.
 
