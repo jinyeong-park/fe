@@ -1,9 +1,12 @@
-# Javascript Questions 
+# Front End Questions
+
+## Javascript Questions
+
 **FYI: ES6 <http://es6-features.org/>**
 
-## Optional: Complete Udemy "The Complete Javascript Course 2020" Section 2 & 3. <https://www.udemy.com/course/the-complete-javascript-course/>
+### Optional: Complete Udemy "The Complete Javascript Course 2020" Section 2 & 3. <https://www.udemy.com/course/the-complete-javascript-course/>
 
-## Q. Explain var vs let vs const
+### Q. Explain var vs let vs const
 
 * var: function scoped, undefined when accessing a variable before it's declared
 * let: block scoped, ReferenceError when accessing a variable before it's declared
@@ -45,7 +48,7 @@ function discountPrices(prices, discount) {
 }
 ```
 
-## Q. Can you give an example for destructuring an object or an array?
+### Q. Can you give an example for destructuring an object or an array?
 
 ```Javascript
 #!Javascript
@@ -79,7 +82,7 @@ console.log(p); // 42
 console.log(q); // true
 ```
 
-## Q. ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
+### Q. ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
 
 use backticks ``
 ```
@@ -90,7 +93,7 @@ const person1 = {
 console.log(`Hi, my name is ${person.name} and I am ${person.age} years old!`);
 ```
 
-## Q. What are the benefits of using spread syntax and how is it different from rest syntax?
+### Q. What are the benefits of using spread syntax and how is it different from rest syntax?
 
 easy unpacking an array of data, and it works in function arguments, as well as in array and object destructuring assignments.
 
@@ -130,7 +133,7 @@ const {
 }; // e: 1, f: 2, others: { g: 3, h: 4 }
 ```
 
-## Q. Explain how "this" works in JavaScript. Can you give an example of one of the ways that working with "this" has changed in ES6?
+### Q. Explain how "this" works in JavaScript. Can you give an example of one of the ways that working with "this" has changed in ES6?
 
 If the new keyword is used when calling the function, this inside the function is a brand new object.
 If apply, call, or bind are used to call/create a function, this inside the function is the object that is passed in as the argument.
@@ -139,7 +142,7 @@ If a function is invoked as a free function invocation, meaning it was invoked w
 If multiple of the above rules apply, the rule that is higher wins and will set the this value.
 If the function is an ES2015 arrow function, it ignores all the rules above and receives the this value of its surrounding scope at the time it is created.
 
-## Q. Explain "Closure" with examples. What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays? 
+### Q. Explain "Closure" with examples. What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays? 
 
 a closure gives you access to an outer function’s scope from an inner function, 
 but the outer function can't access the members of the inner function
@@ -203,7 +206,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-## Q. Explain ES6 "Map" and "Set"
+### Q. Explain ES6 "Map" and "Set"
 
 Key field: in Object, it follows the rule of normal dictionary. The keys MUST be simple types — either integer or string or symbols. Nothing more. But in Map it can be any data type (an object, an array, etc…). 
 Element order: in Map, original order of elements (pairs) is preserved, while in Object, it isn’t.
@@ -558,7 +561,9 @@ console.log(getVowels('sky'));
 
 
 # HTML Question
+
 # CSS Question
+
 # Coding Excercise
 
 * Decorate Student List
