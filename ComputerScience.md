@@ -73,7 +73,7 @@ Explanation: By calling next repeatedly until hasNext returns false,
 
 Link: <https://leetcode.com/problems/flatten-nested-list-iterator/>
 
-* 155. Min Stack**
+* 155. Min Stack
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 push(x) -- Push element x onto stack.
@@ -89,6 +89,31 @@ minStack.getMin();   --> Returns -3.
 minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
+
+* 716. Max Stack
+Design a max stack that supports push, pop, top, peekMax and popMax.
+
+push(x) -- Push element x onto stack.
+pop() -- Remove the element on top of the stack and return it.
+top() -- Get the element on the top.
+peekMax() -- Retrieve the maximum element in the stack.
+popMax() -- Retrieve the maximum element in the stack, and remove it. 
+If you find more than one maximum elements, only remove the top-most one.
+Example 1:
+MaxStack stack = new MaxStack();
+stack.push(5); 
+stack.push(1);
+stack.push(5);
+stack.top(); -> 5
+stack.popMax(); -> 5
+stack.top(); -> 1
+stack.peekMax(); -> 5
+stack.pop(); -> 1
+stack.top(); -> 5
+Note:
+-1e7 <= x <= 1e7
+Number of operations won't exceed 10000.
+The last four operations won't be called when stack is empty.
 
 * 706. Design HashMap
 Design a HashMap without using any built-in hash table libraries.
@@ -206,8 +231,6 @@ Follow the pseudocode exactly!
 ```
 // FUNCTION DEFINITION(S)
 function isIsogram(text) {
-  const letters = new Set([...text.toLowerCase()]);
-  return text.length === letters.size;
 }
 ```
 
@@ -215,29 +238,17 @@ function isIsogram(text) {
 
 ```
 function findMaxRepeatCountInWord(word) {
-  const countMap = [...word].reduce((map, c) => map.set(c, map.has(c) ? map.get(c) + 1 : 1), new Map());
-  return Math.max(...countMap.values());
+  // Break up individual words into individual letters.
+  // Count the instances of each letter
+  // Iterate all the counts and find the highest
+  // Return this word's max repeat count
 }
 
 function findFirstWordWithMostRepeatedChars(text) {
-  const result = text.split(' ').reduce((res, word) => {
-    const count = findMaxRepeatCountInWord(word);
-    if (res.count < count) {
-      res.word = word;
-      res.count = count;
-    }
-    return res;
-  }, { word: '', count: -1 });
-  return result.word;
 }
 
 // ASSERTION FUNCTION(S) TO BE USED
 function assertEqual(actual, expected, textName){
-    if(actual === expected){
-        console.log("passed");
-    } else {
-        console.log("FAILED");
-    }
 }
 // TESTS CASES
 var str = "Amerian banana yellow banana";
@@ -246,65 +257,48 @@ var expectedWord = "banana";
 console.log(actualWord, expectedWord, "display");
 ```
 
-* Decorate Student List
+* 125. Valid Palindrome
 
-Write a function called decorateClassListWithAges. Convert from an array, in this case a class list of names, to an array of object literals decorated with a name and an age for each student. Your decorateClassListWithAges function should use the provided getRandomIntInclusive as part of its solution. (The ages should be randomly generated for each student, either age 10 or age 11)
+Given a string, determine if it is a palindrome, 
+considering only alphanumeric characters and ignoring cases.
 
-The "test suite" that you write for this question will be one of the most complex we have seen so far. In order to verify that your code works as expected, you will need to find a way to iterate over the actual array result of your function, then ensure that the age value for each object in your result is "within the range" of 10 to 11. If you are having tremendous difficulty constructing your test suite, please feel free to consult the reference answers.
+Note: For the purpose of this problem, we define empty string as valid palindrome.
 
-While you should create your own test suite to get the most out of this exercise, there are automated tests provided as well.
+Example 1:
 
-Example:
+Input: "A man, a plan, a canal: Panama"
+Output: true
 
-```
-// Sample Input
-var classList = ["Joe", "Jack", "John", "Fred", "Frank", "Barry", "Larry", "Mary",
-"Harry", "Farrell", "Susan", "Monica", "Keira", "Caroline", "Harriet", "Erica",
-"Luann", "Cheryl", "Beth", "Rupa", "Linda", "Allison", "Nancy", "Dora"];
+Example 2:
 
-// Sample Output
-var classListWithAges = [{"name":"Joe","age":11},{"name":"Jack","age":10},
-{"name":"John","age":11},{"name":"Fred","age":11},{"name":"Frank","age":11},
-{"name":"Barry","age":11},{"name":"Larry","age":11},{"name":"Mary","age":11},
-{"name":"Harry","age":11},{"name":"Farrell","age":10},{"name":"Susan","age":10},
-{"name":"Monica","age":11},{"name":"Keira","age":10},{"name":"Caroline","age":10},
-{"name":"Harriet","age":11},{"name":"Erica","age":11},{"name":"Luann","age":10},
-{"name":"Cheryl","age":11},{"name":"Beth","age":10},{"name":"Rupa","age":11},
-{"name":"Linda","age":10},{"name":"Allison","age":10},{"name":"Nancy","age":10},
-{"name":"Dora","age":10}];
+Input: "race a car"
+Output: false
 
-// FUNCTION DEFINITION(S)
+* 680. Valid Palindrome II
+Given a non-empty string s, you may delete at most one character. 
+Judge whether you can make it a palindrome.
 
-// USE THIS FUNCTION TO GENERATE A RANDOM NUMBER
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+Example 1:
+Input: "aba"
+Output: True
 
-function decorateClassListWithAges(classList) {
-  // creates an object for each string in the input array, with an age of 10 or 11
-  // returns an array of these objects
-  return classList.map(name => {
-    return {
-      name,
-      age: getRandomIntInclusive(10, 11)
-    };
-  });
-}
+Example 2:
+Input: "abca"
+Output: True
+Explanation: You could delete the character 'c'.
+Note:
+The string will only contain lowercase characters a-z. 
+The maximum length of the string is 50000.
 
-// ASSERTION FUNCTION(S) TO BE USED
-function assertWithinRange(low, high, actual, testName){
-    var inRange = low <= actual && high >= actual;
-    if (inRange){
-        console.log("passed");
-    } else {
-        console.log("FAIL");
-    }
-}
-// TESTS CASES
-var classList = ["Joe", "Jack", "John", "Fred", "Frank", "Barry", "Larry", "Mary",
-"Harry", "Farrell", "Susan", "Monica", "Keira", "Caroline", "Harriet", "Erica",
-"Luann", "Cheryl", "Beth", "Rupa", "Linda", "Allison", "Nancy", "Dora"];
+* 5. Longest Palindromic Substring
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 
-```
+Example 1:
+
+Input: "babad"
+Output: "bab"
+Note: "aba" is also a valid answer.
+Example 2:
+
+Input: "cbbd"
+Output: "bb"
