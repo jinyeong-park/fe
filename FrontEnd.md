@@ -23,6 +23,8 @@
 ### Q. Explain "Closure" with examples. What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays? 
 
 ### Q. Explain ES6 "Map" and "Set"
+https://medium.com/front-end-weekly/es6-map-vs-object-what-and-when-b80621932373
+https://medium.com/front-end-weekly/es6-set-vs-array-what-and-when-efc055655e1a
 
 ### Q. Difference between: function Person(){}, var person = Person(), and var person = new Person()?
 
@@ -42,9 +44,106 @@
 
 ### Q. What's the difference between a variable that is: null, undefined or undeclared? How would you go about checking for any of these states?
 
-## HTML Question
+### Q. What is b?
+
+```
+(function () {
+    var a = b = 5;
+})();
+
+console.log(b);
+```
+
+### Q. Implement Debounce
+
+### Q. Implement Throttle
+
+### Q. What is requestAnimationFrame?
+
+### Q. stopPropagation ? preventDefault ?
+
+### Q. Object Soft copy and deep copy? Object.assign?
+
+### Q. Explain the difference between mutable and immutable objects
+
+### Q. What is an example of an immutable object in JavaScript?
+
+### Q. What are the pros and cons of immutability?
+
+### Q. How can you achieve immutability in your own code?
+
+### Q. What is the definition of a higher-order function?
+
+### Q. Functional programming?
+
+### Q. Pure function?
+
+### Q. Can you give an example of a curry function and why this syntax offers an advantage?
+
+### Q. Explain event delegation
+
+### Q. How to optimize the loading performance?
+
+### Q. Explain CORS
+
+### Q. How to implement Multilingual Web Site?
+
+### Q. Explain cookie, sessionStorage and localStorage
+
+### Q. Explain HTTP response status codes
+
+### Q. Explain HTTP response / request headers
+
+### Q. Explain Web Accessibility
+
+### Q. Explain Web Security like SQL Injection, XSS, CSRF
+
+### Q. Explain SEO techniques
+
+### Q. What's the difference between host objects and native objects?
+
+### Q. What's the difference between feature detection, feature inference, and using the UA string?
+
+### Q. Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+
+### Q. Why is extending built-in JavaScript objects not a good idea?
+
+### Q. Explain the same-origin policy with regards to JavaScript.
+
+### Q. How can you share code between files?
+
+### Q. Why you might want to create static class members?
+
+### Q. What are the differences between Long-Polling, Websockets and Server-Sent Events?
+
+### Q. What are HTTP methods? List all HTTP methods that you know, and explain them.
+
+### Q. What is domain pre-fetching and how does it help with performance?
+
+### Q. What are some advantages/disadvantages to testing your code?
+
+### Q. What tools would you use to test your code's functionality?
+
+### Q. What is the difference between a unit test and a functional/integration test?
 
 ## CSS Question
+
+### Q. What is Specificity?
+
+https://css-tricks.com/specifics-on-css-specificity/
+
+### Q. Explaine centering techniques for inline and block elements.
+
+### Q. Explain box-sizing?
+
+### Q. Advantages of preprocessor? sass, stylus, less.
+
+### Q. What is the purpose of a code style linting tool?
+
+### Q. How to debug your code? How to use Chrome Development tools?
+
+### Q. Frontend Architecture Design Check List?
+https://github.com/thedaviddias/Front-End-Checklist
 
 ## Coding Excercise
 
@@ -156,8 +255,214 @@ new Contacts({
 });
 ```
 
-## Unit Test 
+### Q. Combine multiple fetcher with Promise
 
-## ETC
+```
+async function BTCtoCNY(keyword, callback) {
+    //fetch data
+    const response = await fetch(`https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=CNY&apikey=${keyword}`)
+    const json = await response.json();
+    return callback(json);
+}
 
-### Q. How to debug your code? How to use Chrome Development tools?
+// function BTCtoCNY(keyword, callback) {
+//     //fetch data
+//     return fetch(`https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=CNY&apikey=${keyword}`)
+//         .then((response) => response.json())
+//         .then((json) => callback(json));
+// }
+
+//BTCtoCNY('demo', json => json).then(d => console.log(d));
+
+function USDtoJPY(keyword, callback) {
+    //fetch data
+    return fetch(`https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=${keyword}`)
+        .then((response) => response.json())
+        .then((json) => callback(json));
+}
+
+//USDtoJPY('demo', json => json).then(d => console.log(d));
+//use promise all
+function combineExRate(fetchers) {
+}
+
+const combinedExRate = combineExRate([BTCtoCNY, USDtoJPY]);
+combinedExRate('demo', data => console.log('Use Promise All:', data));
+combinedExRate('demo', data => data).then(data => console.log('Use Promise All and then:', data));
+```
+
+### don't use promise all
+
+```
+const combineFetcher = (fetchers) => {
+};
+const combinedFetcher = combineFetcher([BTCtoCNY, USDtoJPY]);
+combinedFetcher('demo', data => console.log('No Promise:', data));
+```
+
+### Q. Load a image file https://developer.mozilla.org/static/img/hero-dino.6c51deebd4af.png and display the time as milliseconds for loading the image file.
+
+### Q. Implement Color viewer 
+It has 5 buttons "add red", "add green", "add blue", and "add white" and "reset". Also, it has a box for displaying the result color.
+When clicking a button, the color will be added 10% for example clicking "add red", then it will have 10% red color than before.
+The default color is "white".
+
+### Q. Implement Poll Widget like facebook
+
+if multipe is true, it will have a check box.
+it will have a submit button for displaying the result.
+
+
+data
+```
+{
+    data: {
+        'Question 1': {
+          multiple: true,
+          items: [
+            'Radio',
+            'Check',
+            'Button'
+        ]},
+        'Question 2': {
+          items: [
+            'aaa',
+            'bbb',
+            'ccc'
+        ]}
+    }
+}
+```
+
+### Q. Write a scheduler in JavaScript that accepts max number of concurrent tasks as a parameter and schedules tasks (each task may take arbitrary time to complete).
+
+```
+const scheduler = new Scheduler({
+    maxActive: 2
+});
+const fn = (activeCount, wait) => {
+    console.log(activeCount, wait);
+};
+scheduler.add(fn, Math.random() * 2000);
+scheduler.add(fn, Math.random() * 2000);
+scheduler.add(fn, Math.random() * 2000);
+scheduler.add(fn, Math.random() * 2000);
+scheduler.add(fn, Math.random() * 2000);
+scheduler.add(fn, Math.random() * 2000);
+```
+
+### Q. Write an emitter class
+
+emitter = new Emitter(); 
+1. Support subscribing to events. 
+sub = emitter.subscribe('event_name', callback); 
+sub2 = emitter.subscribe('event_name', callback2); 
+2. Support emitting events. 
+This particular example should lead to the `callback` above being invoked with `foo` and `bar` as parameters. 
+emitter.emit('event_name', foo, bar); 
+3. Support unsubscribing existing subscriptions by releasing them. sub.release(); 
+`sub` is the reference returned by `subscribe` above
+
+```
+const emitter = new Emitter();
+
+const sub = emitter.subscribe('move', (a, b, c) => {
+    console.log(a, b, c);
+});
+
+emitter.emit('move', 'aa', 'bb', 'cc');
+sub.release();
+emitter.emit('move', 'dd', 'ee', 'ff');
+```
+
+### Q. Implement
+
+Input
+```
+const endorsements = [{
+    skill: 'css',
+    user: 'Bill'
+}, {
+    skill: 'javascript',
+    user: 'Chad'
+}, {
+    skill: 'javascript',
+    user: 'Bill'
+}, {
+    skill: 'css',
+    user: 'Sue'
+}, {
+    skill: 'javascript',
+    user: 'Sue'
+}, {
+    skill: 'html',
+    user: 'Sue'
+}];
+```
+
+
+Output: console.log(getSkills(endorsements));
+```
+[ 
+  { skill: 'javascript', user: ['Chad', 'Bill', 'Sue'], count: 3 }, 
+  { skill: 'css', user: ['Sue', 'Bill'], count: 2 }, 
+  { skill: 'html', user: ['Sue'], count: 1 } 
+]; 
+```
+
+### Q. Implement
+
+Input
+```
+const items = [{
+        color: 'red',
+        type: 'tv',
+        age: 18
+    }, {
+        color: 'silver',
+        type: 'phone',
+        age: 20
+    },
+    {
+        color: 'gold',
+        type: 'watch',
+        age: 22
+    }
+];
+const excludes = [{
+    k: 'color',
+    v: 'silver'
+}, {
+    k: 'type',
+    v: 'tv'
+}, ];
+```
+
+return the filtered items.
+
+### Q. How would you implement a news-feed (which has only posts of text and pictures)?
+
+### Q. How would you implement a photos album?
+
+### Q. How would you facebook comments?
+
+### Q. write a function that prints each letter of the string in different colors. ex. L is red, o is blue, r is green, e is yellow, m is red, after the space, it should be blue.
+
+colors = ["red", "blue", "green", "yellow"]; and a string
+
+str = "Lorem ipsum dolor sit amet";
+
+colorPrinter('Lorem ipsum in the world', ['red', 'blue', 'green', 'yellow']);
+
+### Q. Given 2 identical DOM trees (but not equal) and one element of the first DOM tree, 
+
+how would you find this element in the second DOM tree?
+Does it has a ID or class name or data-* attribute? then we can user querySelector. 
+it has the same innerHTML?
+assumption it has data-id="abc"
+
+### Q. Implement getElementsByClassName()
+
+### Q. Implement Calendar
+
+### Q. Implement Tooltip
