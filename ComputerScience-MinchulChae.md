@@ -265,9 +265,7 @@ console.log(actualWord, expectedWord, "display");
 
 
 ## Number Questions
-
-/*
-1. Two Sum
+### 1. Two Sum
 
 Given an array of integers, 
 return indices of the two numbers such that they add up to a specific target.
@@ -289,21 +287,20 @@ O(n)/O(n)
 map[target - n] = i
 
 sorted? +- left/right
-*/
+
 function twoSum(nums, target) {
-    const map = {};
+    const map = new Map();
     // index
-    map[target - nums[0]] = 0;
+    map.set(target - nums[0], 0);
     for (let i = 1; i < nums.length; i++) {
-        if (map.hasOwnProperty(nums[i])) {
-            return [map[nums[i]], i];
+        if (map.has(nums[i])) {
+            return [map.get(nums[i]), i];
         }
-        map[target - nums[i]] = i;
+        map.set(target - nums[i], i);
     }
 }
 
-/**
-339. Nested List Weight Sum
+### 339. Nested List Weight Sum
 
 Given a nested list of integers, 
 return the sum of all integers in the list weighted by their depth.
@@ -322,7 +319,7 @@ Example 2:
 Input: [1,[4,[6]]]
 Output: 27 
 Explanation: One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3; 1 + 4*2 + 6*3 = 27.
- */
+ 
 function depthSum(nestedList, depth = 1) {
     let sum = 0;
     nestedList.forEach(n => {
@@ -344,8 +341,7 @@ console.log(depthSum([
     [1, 1], 2, [1, 1]
 ]));
 
-/**
-341. Flatten Nested List Iterator
+### 341. Flatten Nested List Iterator
 Given a nested list of integers, implement an iterator to flatten it.
 
 Each element is either an integer, or a list 
@@ -363,7 +359,7 @@ Input: [1,[4,[6]]]
 Output: [1,4,6]
 Explanation: By calling next repeatedly until hasNext returns false, 
              the order of elements returned by next should be: [1,4,6].
- */
+ 
 //array
 class NestedIterator {
 
@@ -393,8 +389,7 @@ while (sol.hasNext()) {
     console.log(sol.next());
 }
 
-/**
-15. 3Sum
+### 15. 3Sum
 Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 
 Note:
@@ -415,7 +410,7 @@ A solution set is:
 
 sort,
 -1 * nums[n] + (nums[start] + nums[end]) = target
-*/
+
 function threeSum(nums) {
     nums.sort((a, b) => a - b);
     const len = nums.length;
@@ -446,8 +441,7 @@ function threeSum(nums) {
 
 
 
-/**
-08. String to Integer (atoi)
+### 08. String to Integer (atoi)
 
 Implement atoi which converts a string to an integer.
 
@@ -500,7 +494,7 @@ Input: "-91283472332"
 Output: -2147483648
 Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.
              Thefore INT_MIN (−231) is returned.
- */
+ 
 function myAtoi(str) {
     if (!str) return 0;
     let num = 0;
@@ -552,8 +546,7 @@ function myAtoi(str) {
     return num;
 }
 
-/**
-326. Power of Three
+### 326. Power of Three
 Given an integer, write a function to determine if it is a power of three.
 
 Example 1:
@@ -577,7 +570,7 @@ Input: 45
 Output: false
 Follow up:
 Could you do it without using any loop / recursion?
- */
+ 
 function isPowerOfThree(n) {
     // if (n <= 0) return false;
     // const max = Math.pow(3, 19);
@@ -594,8 +587,7 @@ function isPowerOfThree(n) {
 
 
 
-/**
-07. Reverse Integer
+### 07. Reverse Integer
 
 Given a 32-bit signed integer, reverse digits of an integer.
 
@@ -618,7 +610,7 @@ Assume we are dealing with an environment
 which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. 
 For the purpose of this problem, 
 assume that your function returns 0 when the reversed integer overflows.
-*/
+
 function reverse(n) {
     let res = 0;
     const max = Math.pow(2, 31) - 1;
@@ -690,7 +682,7 @@ Example 5:
 Input: "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
-*/
+
 function romanToInt(s) {
     const map = {
         'I': 1,
@@ -717,8 +709,7 @@ function romanToInt(s) {
     return res;
 }
 
-/**
-168. Excel Sheet Column Title
+### 168. Excel Sheet Column Title
 
 Given a positive integer, return its corresponding column title as appear in an Excel sheet.
 
@@ -744,7 +735,7 @@ Example 3:
 
 Input: 701
 Output: "ZY"
- */
+ 
 
 function convertToTitle(n) {
     let res = '';
@@ -760,8 +751,7 @@ function convertToTitle(n) {
     return res;
 }
 
-/**
-171. Excel Sheet Column Number
+### 171. Excel Sheet Column Number
 
 Given a column title as appear in an Excel sheet, return its corresponding column number.
 
@@ -789,7 +779,7 @@ Example 3:
 
 Input: "ZY"
 Output: 701
- */
+ 
 
 function titleToNumber(s) {
     let res = 0;
@@ -800,8 +790,7 @@ function titleToNumber(s) {
     return res;
 }
 
-/**
-026. Remove Duplicates from Sorted Array
+### 026. Remove Duplicates from Sorted Array
 
 Given a sorted array nums, remove the duplicates in-place 
 such that each element appear only once and return the new length.
@@ -842,7 +831,7 @@ int len = removeDuplicates(nums);
 for (int i = 0; i < len; i++) {
     print(nums[i]);
 }
- */
+ 
 function removeDuplicates(nums) {
     let idx = 0;
     for (let i = 1, len = num.length; i < len; i++) {
@@ -854,8 +843,7 @@ function removeDuplicates(nums) {
     return idx + 1;
 }
 
-/**
-217. Contains Duplicate
+### 217. Contains Duplicate
 
 Given an array of integers, find if the array contains any duplicates.
 
@@ -876,7 +864,7 @@ Example 3:
 
 Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
- */
+ 
 //sorting is another solution. n === n + 1 ?
 function containsDuplicate(nums) {
     const map = {};
@@ -895,8 +883,7 @@ function containsDuplicate2(nums) {
     return false;
 }
 
-/**
-268. Missing Number
+### 268. Missing Number
 Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, 
 find the one that is missing from the array.
 
@@ -913,7 +900,7 @@ Your algorithm should run in linear runtime complexity.
 Could you implement it using only constant extra space complexity?
 
 
- */
+ 
 //Gauss' Formula, sorting, 
 function missingNumber(nums) {
     const len = nums.length;
@@ -922,13 +909,12 @@ function missingNumber(nums) {
     return result - sum;
 }
 
-/*
-missing
+### missing
 =4∧(0∧0)∧(1∧1)∧(2∧3)∧(3∧4)
 =(4∧4)∧(0∧0)∧(1∧1)∧(3∧3)∧2
 =0∧0∧0∧0∧2
 =2
-*/
+
 function missingNumber(nums) {
     let missing = nums.length;
     for (let i = 0; i < nums.length; i++) {
@@ -937,8 +923,7 @@ function missingNumber(nums) {
     return missing;
 }
 
-/*
-Sorting
+### Sorting
 
 class Solution {
     public int missingNumber(int[] nums) {
@@ -994,10 +979,9 @@ class Solution {
         return missing;
     }
 }
-*/
 
-/**
-033. Search in Rotated Sorted Array
+
+### 033. Search in Rotated Sorted Array
 
 Divde and Conquer
 https://youtu.be/uufaK2uLnSI
@@ -1024,7 +1008,7 @@ Output: -1
 ---
 mid < end ?, target < mid ? end = mid - 1; 
 mid > end ?, target < mid ? start = mid + 1;
- */
+ 
 
 function search(nums, target) {
     let start = 0;
@@ -1058,8 +1042,7 @@ function search(nums, target) {
 
 
 
-/**
-088. Merge Sorted Array
+### 088. Merge Sorted Array
 
 Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
 
@@ -1075,7 +1058,7 @@ nums1 = [1,2,3,0,0,0], m = 3
 nums2 = [2,5,6],       n = 3
 
 Output: [1,2,2,3,5,6]
- */
+ 
 
 function mergeSortedArray(nums1, m, nums2, n) {
     let mEnd = m - 1;
@@ -1100,8 +1083,7 @@ function mergeSortedArray(nums1, m, nums2, n) {
 }
 
 
-/**
-350. Intersection of Two Arrays II
+### 350. Intersection of Two Arrays II
 Given two arrays, write a function to compute their intersection.
 
 Example 1:
@@ -1122,7 +1104,7 @@ What if the given array is already sorted? How would you optimize your algorithm
 What if nums1's size is small compared to nums2's size? Which algorithm is better?
 What if elements of nums2 are stored on disk, and the memory is limited 
 such that you cannot load all elements into the memory at once?
- */
+ 
 
 function intersect(nums1, nums2) {
     const map = nums1.reduce((agg, n) => agg[n] = (agg[n] || 0) + 1, {});
@@ -1135,8 +1117,7 @@ function intersect(nums1, nums2) {
     });
 }
 
-/**
-283. Move Zeroes
+### 283. Move Zeroes
 Given an array nums, write a function to move all 0's to the end of it 
 while maintaining the relative order of the non-zero elements.
 
@@ -1148,7 +1129,7 @@ Note:
 
 You must do this in-place without making a copy of the array.
 Minimize the total number of operations.
- */
+ 
 
 const moveZeroes = nums => {
     if (nums.length) {
@@ -1162,8 +1143,7 @@ const moveZeroes = nums => {
     return nums;
 };
 
-/**
-605. Can Place Flowers
+### 605. Can Place Flowers
 Suppose you have a long flowerbed in which some of the plots are planted 
 and some are not. However, flowers cannot be planted in adjacent plots 
 - they would compete for water and both would die.
@@ -1184,7 +1164,7 @@ Note:
 The input array won't violate no-adjacent-flowers rule.
 The input array size is in the range of [1, 20000].
 n is a non-negative integer which won't exceed the input array size.
- */
+ 
 
 function canPlaceFlowers(flowerbed, n) {
     if (n === 0) return true;
@@ -1202,8 +1182,7 @@ function canPlaceFlowers(flowerbed, n) {
     return false;
 }
 
-/**
-849. Maximize Distance to Closest Person
+### 849. Maximize Distance to Closest Person
 
 In a row of seats, 1 represents a person sitting in that seat, 
 and 0 represents that the seat is empty. 
@@ -1235,7 +1214,7 @@ Note:
 
 1 <= seats.length <= 20000
 seats contains only 0s or 1s, at least one 0, and at least one 1.
- */
+ 
 function maxDistToClosest(seats) {
     let prevZero = 0;
     let max = 0;
@@ -1257,8 +1236,7 @@ function maxDistToClosest(seats) {
 
 
 
-/**
-121. Best Time to Buy and Sell Stock
+### 121. Best Time to Buy and Sell Stock
 
 Say you have an array for which the ith element is the price of a given stock on day i.
 
@@ -1279,7 +1257,7 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
  * 
- */
+ 
 
 function maxProfit(prices) {
     let maxProfit = 0;
@@ -1294,8 +1272,7 @@ function maxProfit(prices) {
     return maxProfit;
 }
 
-/**
-122. Best Time to Buy and Sell Stock II
+### 122. Best Time to Buy and Sell Stock II
 
 Say you have an array for which the ith element is the price of a given stock on day i.
 
@@ -1324,7 +1301,7 @@ Example 3:
 Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
- */
+ 
 
 function maxProfit(prices) {
     let max = 0;
@@ -1336,8 +1313,7 @@ function maxProfit(prices) {
     return max;
 }
 
-/**
-136. Single Number
+### 136. Single Number
 
 Given a non-empty array of integers, every element appears twice except for one. 
 Find that single one.
@@ -1356,7 +1332,7 @@ Example 2:
 
 Input: [4,1,2,1,2]
 Output: 4
- */
+ 
 function singleNumber(nums) {
     const map = {};
     nums.forEach(n => map[n] ? delete map[n] : map[n] = true);
@@ -1373,8 +1349,7 @@ function singleNumber2(nums) {
 }
 
 
-/**
-189. Rotate Array
+### 189. Rotate Array
 Given an array, rotate the array to the right by k steps, where k is non-negative.
 
 Example 1:
@@ -1397,7 +1372,7 @@ Note:
 
 Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
 Could you do it in-place with O(1) extra space?
- */
+ 
 
 function rotate(nums, k) {
     const len = nums.length;
@@ -1428,8 +1403,7 @@ function rotate(nums, k) {
     reverse(k, end);
 }
 
-/**
-344. Reverse String
+### 344. Reverse String
 Write a function that reverses a string. 
 The input string is given as an array of characters char[].
 
@@ -1446,7 +1420,7 @@ Example 2:
 
 Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
- */
+ 
 
 function reverseString(s) {
     let start = 0;
@@ -1460,8 +1434,7 @@ function reverseString(s) {
     }
 }
 
-/**
-042. Trapping Rain Water
+### 042. Trapping Rain Water
 
 Given n non-negative integers representing an elevation map where the width of each bar is 1, 
 compute how much water it is able to trap after raining.
@@ -1475,7 +1448,7 @@ Example:
 Input: [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
 
- */
+ 
 
 function trap(h) {
     let res = 0;
@@ -1509,8 +1482,7 @@ function trap(h) {
     return res;
 }
 
-/**
-056. Merge Intervals
+### 056. Merge Intervals
 
 Given a collection of intervals, merge all overlapping intervals.
 
@@ -1527,7 +1499,7 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 NOTE: input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.
 
 sort, end and next start is overlapped then combine.
- */
+ 
 
 function merge(intervals) {
     intervals = intervals.sort((a, b) => a[0] - b[0]);
@@ -1548,8 +1520,7 @@ function merge(intervals) {
 }
 
 
-/*
-57. Insert Interval
+### 57. Insert Interval
 Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
 
 You may assume that the intervals were initially sorted according to their start times.
@@ -1564,7 +1535,7 @@ Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
 Output: [[1,2],[3,10],[12,16]]
 Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 NOTE: input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.
-*/
+
 
 function insert(intervals, newInterval) {
     let len = intervals.length;
@@ -1591,8 +1562,7 @@ function insert(intervals, newInterval) {
     return res;
 }
 
-/*
-252. Meeting Rooms
+### 252. Meeting Rooms
 
 Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all meetings.
 
@@ -1605,7 +1575,7 @@ Example 2:
 Input: [[7,10],[2,4]]
 Output: true
 NOTE: input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.
-*/
+
 function canAttendMeetings(intervals) {
     intervals = intervals.sort((a, b) => a[0] - b[0]);
     for (let i = 0; i < intervals.length - 1; i++) {
@@ -1613,8 +1583,7 @@ function canAttendMeetings(intervals) {
     }
     return true;
 }
-/*
-253. Meeting Rooms II
+### 253. Meeting Rooms II
 
 Given an array of meeting time intervals consisting of start and end times 
 [[s1,e1],[s2,e2],...] (si < ei), 
@@ -1644,7 +1613,7 @@ long array = Quick Sort(Time O(nlogn), Space O(logn))
 => average = Time O(nlogn), Space O(logn).
 https://blog.shovonhasan.com/time-space-complexity-of-array-sort-in-v8/
 finding maximum count of overlap times
- */
+ 
 
 function minMeetingRooms(intervals) {
     const len = intervals.length;
@@ -1727,8 +1696,7 @@ minMeetingRooms([
     [15, 20]
 ]);
 
-/**
-973. K Closest Points to Origin
+### 973. K Closest Points to Origin
 
 We have a list of points on the plane.  Find the K closest points to the origin (0, 0).
 
@@ -1765,7 +1733,7 @@ https://youtu.be/eaYX0Ee0Kcg
 Pythagorean Theorem
 x*x + y*y = c*c
 Sort by Distance sqrt x * x + y * y
- */
+ 
 
 //sort
 function kClosest(points, K) {
@@ -1773,12 +1741,11 @@ function kClosest(points, K) {
     return points.slice(0, K);
 }
 
-/**
- * solution2: quick select
+###  * solution2: quick select
  * @param {number[][]} points
  * @param {number} K
  * @return {number[][]}
- */
+ 
 function kClosest(points, K) {
     function quickSelect(arr, l, r) {
         const pivot = arr[l];
@@ -1832,8 +1799,7 @@ function quickSort(arr) {
     return arr;
 }
 
-/**
-066. Plus One
+### 066. Plus One
 
 Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
 
@@ -1853,7 +1819,7 @@ Example 2:
 Input: [4,3,2,1]
 Output: [4,3,2,2]
 Explanation: The array represents the integer 4321.
- */
+ 
 
 function plusOne(digits) {
     const len = digits.length;
@@ -1873,8 +1839,7 @@ function plusOne(digits) {
 }
 plusOne([1, 2, 3]);
 
-/**
-067. Add Binary
+### 067. Add Binary
 
 Given two binary strings, return their sum (also a binary string).
 
@@ -1888,7 +1853,7 @@ Example 2:
 
 Input: a = "1010", b = "1011"
 Output: "10101"
- */
+ 
 
 //Math, String
 function addBinary(a, b) {
@@ -1911,8 +1876,7 @@ function addBinary(a, b) {
     return carry ? 1 + res : res;
 }
 
-/**
-204. Count Primes
+### 204. Count Primes
 Count the number of prime numbers less than a non-negative number, n.
 
 Example:
@@ -1922,7 +1886,7 @@ Output: 4
 Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
 
 FYI, A prime number is a whole number greater than 1 whose only factors are 1 and itself. A factor is a whole numbers that can be divided evenly into another number. The first few prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29. Numbers that have more than two factors are called composite numbers. The number 1 is neither prime nor composite. 
- */
+ 
 function countPrimes(n) {
     const notPrime = {};
     let count = 0;
@@ -1950,7 +1914,7 @@ sort(A, B);
 // A is now [D, F, G, C, E];
 
 O(n)
-*/
+
 
 function reorder(A, B) {
     function swap(arr, i, j) {
@@ -1969,8 +1933,7 @@ function reorder(A, B) {
 
 console.log(reorder(['C', 'D', 'E', 'F', 'G'], [3, 0, 4, 1, 2]));
 
-/**
-118. Pascal's Triangle
+### 118. Pascal's Triangle
 
 Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
 
@@ -1987,7 +1950,7 @@ Output:
   [1,3,3,1],
  [1,4,6,4,1]
 ]
- */
+ 
 function generate(numRows) {
     if (!numRows) return [];
     const res = [
@@ -2005,8 +1968,7 @@ function generate(numRows) {
     return res;
 }
 
-/*
-38. Count and Say
+### 38. Count and Say
 The count-and-say sequence is the sequence of integers with the first five terms as following:
 
 1.     1
@@ -2034,7 +1996,7 @@ Output: "1211"
 count the same characters from the previous string
 add count as a string
 count again...
-*/
+
 function countAndSay(n) {
     function traverse(prev) {
         const len = prev.length;
@@ -2061,8 +2023,7 @@ function countAndSay(n) {
 }
 
 
-/**
-4. Median of Two Sorted Arrays
+### 4. Median of Two Sorted Arrays
 There are two sorted arrays nums1 and nums2 of size m and n respectively.
 
 Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
@@ -2081,7 +2042,7 @@ nums1 = [1, 2]
 nums2 = [3, 4]
 
 The median is (2 + 3)/2 = 2.5
-*/
+
 
 function findMedianSortedArrays(nums1, nums2) {
     const len = nums1.length + nums2.length;
@@ -2110,8 +2071,7 @@ function findMedianSortedArrays(nums1, nums2) {
     return len % 2 === 0 ? (prev + curr) / 2 : curr;
 }
 
-/**
-278. First Bad Version #TODO
+### 278. First Bad Version #TODO
 You are a product manager and currently leading a team to develop a new product. 
 Unfortunately, the latest version of your product fails the quality check. 
 Since each version is developed based on the previous version, 
@@ -2138,7 +2098,7 @@ Then 4 is the first bad version.
 ----
 |     _________|
 
- */
+ 
 function firstBadVersion(isBadVersion) {
     return n => {
         let start = 1;
@@ -2155,13 +2115,7 @@ function firstBadVersion(isBadVersion) {
     };
 }
 
-
-
-
-## String Questions
-
-/*
-3. Longest Substring Without Repeating Characters
+### 3. Longest Substring Without Repeating Characters
 Given a string, find the length of the longest substring without repeating characters.
 
 Example 1:
@@ -2183,7 +2137,7 @@ Explanation: The answer is "wke", with the length of 3.
              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 ---
 
-*/
+
 
 //Sliding window
 function lengthOfLongestSubstring(s) {
@@ -2206,8 +2160,7 @@ function lengthOfLongestSubstring(s) {
     return max;
 }
 
-/*
-5. Longest Palindromic Substring
+### 5. Longest Palindromic Substring
 Dynamic Programming, String
 
 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
@@ -2221,7 +2174,7 @@ Example 2:
 
 Input: "cbbd"
 Output: "bb"
- */
+ 
 function longestPalindrome(s) {
     const len = s.length;
     if (len < 2) return s;
@@ -2255,8 +2208,7 @@ function longestPalindrome(s) {
     return maxStr;
 }
 
-/**
-14. Longest Common Prefix
+### 14. Longest Common Prefix
 
 Write a function to find the longest common prefix string amongst an array of strings.
 
@@ -2274,7 +2226,7 @@ Explanation: There is no common prefix among the input strings.
 Note:
 
 All given inputs are in lowercase letters a-z.
- */
+ 
 function longestCommonPrefix(strs) {
     if (strs.length === 0) return '';
     let prefix = strs[0];
@@ -2295,8 +2247,7 @@ function longestCommonPrefix(strs) {
     return prefix.slice(0, maxLen);
 }
 
-/**
-243. Shortest Word Distance
+### 243. Shortest Word Distance
 Given a list of words and two words word1 and word2, 
 return the shortest distance between these two words in the list.
 
@@ -2312,7 +2263,7 @@ Output: 1
 Note:
 You may assume that word1 does not equal to word2, 
 and word1 and word2 are both in the list.
- */
+ 
 function shortestDistance(words, word1, word2) {
     let w1 = -1;
     let w2 = -1;
@@ -2330,8 +2281,7 @@ function shortestDistance(words, word1, word2) {
     return shortest;
 }
 
-/**
-20. Valid Parentheses
+### 20. Valid Parentheses
 
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', 
 determine if the input string is valid.
@@ -2362,7 +2312,7 @@ Example 5:
 
 Input: "{[]}"
 Output: true
- */
+ 
 function isValid(s) {
     const len = s.length;
     if (len === 0) {
@@ -2386,8 +2336,7 @@ function isValid(s) {
     return stack.length === 0;
 }
 
-/**
-028. Implement strStr()
+### 028. Implement strStr()
 
 Implement strStr().
 
@@ -2411,7 +2360,7 @@ This is a great question to ask during an interview.
 For the purpose of this problem, 
 we will return 0 when needle is an empty string. 
 This is consistent to C's strstr() and Java's indexOf().
- */
+ 
 function strStr(haystack, needle) {
     if (!needle) return 0;
     const hlen = haystack.length;
@@ -2428,8 +2377,7 @@ function strStr(haystack, needle) {
 }
 console.log(strStr("mississippi", "issip"));
 
-/**
-125. Valid Palindrome
+### 125. Valid Palindrome
 
 Given a string, determine if it is a palindrome, 
 considering only alphanumeric characters and ignoring cases.
@@ -2445,7 +2393,7 @@ Example 2:
 
 Input: "race a car"
 Output: false
- */
+ 
 function isPalindrome(s) {
     s = s.replace(/[^\w]/gi, '').toLowerCase();
     //s = s.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -2460,8 +2408,7 @@ function isPalindrome(s) {
 }
 
 
-/**
-680. Valid Palindrome II
+### 680. Valid Palindrome II
 Given a non-empty string s, you may delete at most one character. 
 Judge whether you can make it a palindrome.
 
@@ -2476,7 +2423,7 @@ Explanation: You could delete the character 'c'.
 Note:
 The string will only contain lowercase characters a-z. 
 The maximum length of the string is 50000.
- */
+ 
 
 function validPalindrome(s, left = 0, right = s.length - 1, deleted = false) {
     while (left < right) {
@@ -2495,8 +2442,7 @@ function validPalindrome(s, left = 0, right = s.length - 1, deleted = false) {
 }
 
 
-/**
-242. Valid Anagram
+### 242. Valid Anagram
 Given two strings s and t , 
 write a function to determine if t is an anagram of s.
 
@@ -2514,7 +2460,7 @@ You may assume the string contains only lowercase alphabets.
 Follow up:
 What if the inputs contain unicode characters? 
 How would you adapt your solution to such case?
- */
+ 
 function isAnagram(s, t) {
     if (s.length !== t.length) return false;
     const map = {};
@@ -2584,8 +2530,7 @@ const countPermutations = (word1, word2) => {
 console.log('countPermutations -> ', countPermutations(word1, word2));
 
 
-/**
-205. Isomorphic Strings
+### 205. Isomorphic Strings
 
 Given two strings s and t, determine if they are isomorphic.
 
@@ -2610,7 +2555,7 @@ Input: s = "paper", t = "title"
 Output: true
 Note:
 You may assume both s and t have the same length.
- */
+ 
 function isIsomorphic(s, t) {
     if (s.length !== t.length) return false;
     const mapA = {};
@@ -2624,8 +2569,7 @@ function isIsomorphic(s, t) {
     return true;
 }
 
-/**
-387. First Unique Character in a String
+### 387. First Unique Character in a String
 Given a string, find the first non-repeating character in it 
 and return it's index. If it doesn't exist, return -1.
 
@@ -2637,7 +2581,7 @@ return 0.
 s = "loveleetcode",
 return 2.
 Note: You may assume the string contain only lowercase letters.
- */
+ 
 function firstUniqChar(s) {
     const map = new Map();
     for (let i = 0; i < s.length; i++) {
@@ -2649,8 +2593,7 @@ function firstUniqChar(s) {
     return -1;
 }
 
-/**
-151. Reverse Words in a String
+### 151. Reverse Words in a String
 
 Given an input string, reverse the string word by word.
 
@@ -2685,7 +2628,7 @@ You need to reduce multiple spaces between two words to a single space in the re
 Follow up:
 
 For C programmers, try to solve it in-place in O(1) extra space.
- */
+ 
 
 function reverseWords(str) {
     return str.trim().split(/\s+/g).reverse().join(' ');
@@ -2706,8 +2649,7 @@ function reverseWords(str) {
     return word ? (res !== '' ? res + ' ' : '') + word : res;
 }
 
-/**
-412. Fizz Buzz
+### 412. Fizz Buzz
 Write a program that outputs the string representation of numbers from 1 to n.
 
 But for multiples of three it should output “Fizz” instead of the number 
@@ -2736,7 +2678,7 @@ Return:
     "14",
     "FizzBuzz"
 ]
- */
+ 
 function fizzBuzz(n) {
     const arr = [];
     for (let i = 1; i <= n; i++) {
@@ -2748,8 +2690,7 @@ function fizzBuzz(n) {
     return arr;
 }
 
-/**
-482. License Key Formatting
+### 482. License Key Formatting
 You are given a license key represented as a string S 
 which consists only alphanumeric character and dashes. 
 The string is separated into N+1 groups by N dashes.
@@ -2785,7 +2726,7 @@ The length of string S will not exceed 12,000, and K is a positive integer.
 String S consists only of alphanumerical characters (a-z and/or A-Z and/or 0-9) 
 and dashes(-).
 String S is non-empty.
- */
+ 
 
 function licenseKeyFormatting(S, K) {
     let res = '';
@@ -2807,8 +2748,7 @@ function licenseKeyFormatting(S, K) {
     return res[0] === '-' ? res.slice(1) : res;
 }
 
-/**
-844. Backspace String Compare
+### 844. Backspace String Compare
 Given two strings S and T, 
 return if they are equal when both are typed into empty text editors. 
 # means a backspace character.
@@ -2841,7 +2781,7 @@ S and T only contain lowercase letters and '#' characters.
 Follow up:
 
 Can you solve it in O(N) time and O(1) space?
- */
+ 
 
 /** Two pointers
    - from back to front
@@ -2850,7 +2790,7 @@ Can you solve it in O(N) time and O(1) space?
    - if #, count++
    - if one ends, the other count == 0 && has any char return false
    - else return true
-    */
+    
 
 function backspaceCompare(S, T) {
     let i = S.length - 1;
@@ -2893,8 +2833,7 @@ function backspaceCompare(S, T) {
 
 console.log(backspaceCompare('ab#c', 'ad#c'));
 
-/**
-929. Unique Email Addresses
+### 929. Unique Email Addresses
 Every email consists of a local name and a domain name, separated by the @ sign.
 
 For example, in alice@leetcode.com, alice is the local name, 
@@ -2934,19 +2873,18 @@ All local and domain names are non-empty.
 Local names do not start with a '+' character.
 
 Map is faster than {}
- */
+ 
 function numUniqueEmails(emails) {
     const unique = new Map();
     for (let i = 0; i < emails.length; i++) {
         const nd = emails[i].split('@');
-        nd[0] = nd[0].replace(/\.|\+.*/g, ''); //\+.* + any charactor~
+        nd[0] = nd[0].replace(/\.|\+.g, ''); //\+.* + any charactor~
         unique.set(nd.join('@'), true);
     }
     return unique.size;
 }
 
-/**
-394. Decode String
+### 394. Decode String
 Given an encoded string, return its decoded string.
 
 The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
@@ -2960,7 +2898,7 @@ Examples:
 s = "3[a]2[bc]", return "aaabcbc".
 s = "3[a2[c]]", return "accaccacc".
 s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
-*/
+
 function decodeString(s) {
     let stack = [];
     let i = 0;
@@ -2997,8 +2935,7 @@ function decodeString(s) {
     return stack.join('');
 }
 
-/*
-771. Jewels and Stones
+### 771. Jewels and Stones
 You're given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of the stones you have are also jewels.
 
 The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so "a" is considered a different type of stone from "A".
@@ -3020,7 +2957,7 @@ The characters in J are distinct.
 ---
 build hashtable from J
 count it
-*/
+
 
 function numJewelsInStones(J, S) {
     const map = {};
@@ -3034,11 +2971,7 @@ function numJewelsInStones(J, S) {
     return count;
 }
 
-
-## Matrix Questions
-
-/**
-036. Valid Sudoku-basic
+### 036. Valid Sudoku-basic
 
 Determine if a 9x9 Sudoku board is valid. 
 Only the filled cells need to be validated according to the following rules:
@@ -3089,7 +3022,7 @@ A Sudoku board (partially filled) could be valid but is not necessarily solvable
 Only the filled cells need to be validated according to the mentioned rules.
 The given board contain only digits 1-9 and the character '.'.
 The given board size is always 9x9.
- */
+ 
 function isValidSudoku(board) {
   const colMaps = [];
   const boxMaps = [];
@@ -3132,8 +3065,7 @@ console.log(isValidSudoku([
   [".", ".", ".", ".", "8", ".", ".", "7", "9"]
 ]));
 
-/**
-048. Rotate Image
+### 048. Rotate Image
 
 You are given an n x n 2D matrix representing an image.
 
@@ -3176,7 +3108,7 @@ rotate the input matrix in-place such that it becomes:
   [12, 6, 8, 9],
   [16, 7,10,11]
 ]
- */
+ 
 
 function rotate(matrix) {
   const len = matrix.length;
@@ -3207,8 +3139,7 @@ console.log(rotate([
   [15, 14, 12, 16]
 ]));
 
-/*
-054. Spiral Matrix
+### 054. Spiral Matrix
 
 Given a matrix of m x n elements (m rows, n columns), 
 return all elements of the matrix in spiral order.
@@ -3231,7 +3162,7 @@ Input:
   [9,10,11,12]
 ]
 Output: [1,2,3,4,8,12,11,10,9,5,6,7]
-*/
+
 
 function spiralOrder(matrix) {
   if (matrix.length === 0) return matrix;
@@ -3268,8 +3199,7 @@ function spiralOrder(matrix) {
   return res;
 }
 
-/*
-59. Spiral Matrix II
+### 59. Spiral Matrix II
 Given a positive integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
 
 Example:
@@ -3281,7 +3211,7 @@ Output:
  [ 8, 9, 4 ],
  [ 7, 6, 5 ]
 ]
-*/
+
 
 function generateMatrix(n) {
   let count = 1;
@@ -3329,7 +3259,7 @@ rowCount = 5
     [4,  7, 14],
     [5,  6, 15]
 ]
-*/
+
 
 function generateMatrix(rowLen, colLen) {
   let count = 1;
@@ -3354,7 +3284,7 @@ console.log(generateMatrix(7, 5));
 
 /* fb
 Given a grid of characters output a decoded message. The message for the following would be IROCKED. (diagonally down right and diagonally up right if you can't go further .. you continue doing this)
-*/
+
 function zigZag(matrix) {
   let rowMove = 1;
   let row = 0;
@@ -3384,8 +3314,7 @@ console.log(zigZag([
   ['G', 'H', 'O', 'E', 'L', 'A', 'D']
 ])); // IROCKED
 
-/*
-498. Diagonal Traverse
+### 498. Diagonal Traverse
 
 Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in diagonal order as shown in the below image.
 
@@ -3407,7 +3336,7 @@ Explanation:
 Note:
 
 The total number of elements of the given matrix will not exceed 10,000.
-*/
+
 
 function findDiagonalOrder(matrix) {
 
@@ -3464,8 +3393,7 @@ console.log(findDiagonalOrder([
 ]));
 
 
-/**
-200. Number of Islands
+### 200. Number of Islands
 
 https://www.geeksforgeeks.org/find-number-of-islands/
 //https://youtu.be/CLvNe-8-6s8
@@ -3493,7 +3421,7 @@ Input:
 00011
 
 Output: 3
- */
+ 
 //TIP: remove the connected 1
 //DFS
 function numIslands(grid) {
@@ -3561,8 +3489,7 @@ function numIslands(grid) {
   }
   return count;
 }
-/*
-79. Word Search
+### 79. Word Search
 
 Given a 2D board and a word, find if the word exists in the grid.
 
@@ -3580,7 +3507,7 @@ board =
 Given word = "ABCCED", return true.
 Given word = "SEE", return true.
 Given word = "ABCB", return false.
-*/
+
 
 function exist(board, word) {
   const wordLen = word.length;
@@ -3613,8 +3540,7 @@ function exist(board, word) {
   return false;
 }
 
-/*
-74. Search a 2D Matrix
+### 74. Search a 2D Matrix
 Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 
 Integers in each row are sorted from left to right.
@@ -3643,7 +3569,7 @@ Output: false
 ---
 find row target < last col, row
 binary search
-*/
+
 
 function searchMatrix(matrix, target) {
   if (!matrix.length) return false;
@@ -3706,8 +3632,7 @@ function searchMatrix(matrix, target) {
 }
 
 
-/*
-240. Search a 2D Matrix II
+### 240. Search a 2D Matrix II
 
 Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 
@@ -3729,7 +3654,7 @@ Given target = 5, return true.
 Given target = 20, return false.
 
 O(m + n)
-*/
+
 
 function searchMatrix(matrix, target) {
   if (!matrix.length || !matrix[0].length) return false;
@@ -3747,83 +3672,6 @@ function searchMatrix(matrix, target) {
   return false;
 }
 
-## Sorting
-```
-//https://khan4019.github.io/front-end-Interview-Questions/sort.html#quickSort
-//https://pediaa.com/what-is-the-difference-between-quicksort-and-merge-sort/
-//https://www.youtube.com/watch?v=COk73cpQbFQ
-//n log n / log n (in-place)
-// [4,6,9,1,2,5,3]
-// [3,2,1,4,6,9,5]
-//        4
-//  3,2,1    6,9,5
-//      3      6
-//  2,1      5  9
-//    2
-//  1
-
-function quickSort(arr) {
-  const partition = (left, right) => {
-    let idx = left;
-    const pivot = arr[right];
-    for (let i = left; i < right; i++) {
-      if (arr[i] < pivot) {
-        [arr[i], arr[idx]] = [arr[idx], arr[i]];
-        idx++;
-      }
-    }
-    [arr[right], arr[idx]] = [arr[idx], arr[right]];
-    return idx;
-  };
-  const traverse = (left, right) => {
-    if (left >= right) return;
-    const idx = partition(left, right);
-    traverse(left, idx - 1);
-    traverse(idx + 1, right);
-  };
-  traverse(0, arr.length - 1);
-  return arr;
-}
-
-quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]);
-
-//MergeSort
-// Split the array into halves and merge them recursively 
-//https://youtu.be/TzeBrDU-JaY
-//https://youtu.be/0nlPxaC2lTw
-//n log n / n
-function mergeSort(arr) {
-  //divide to 1 member.
-  if (arr.length === 1) return arr;
-  const mid = Math.floor(arr.length / 2);
-  const left = arr.slice(0, mid);
-  const right = arr.slice(mid);
-
-  const merge = (left, right) => {
-    const res = [];
-    let li = 0;
-    let ri = 0;
-    while (li < left.length && ri < right.length) {
-      if (left[li] < right[ri]) {
-        res.push(left[li]);
-        li++;
-      } else {
-        res.push(right[ri]);
-        ri++;
-      }
-    }
-    return res.concat(left.slice(li)).concat(right.slice(ri));
-  };
-
-  return merge(mergeSort(left), mergeSort(right));
-}
-
-mergeSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]);
-
-```
-
-
-## Design Questions
 
 ### 146. LRU Cache
 
@@ -3852,7 +3700,7 @@ cache.get(3);       // returns 3
 cache.get(4);       // returns 4
 
 Design, Hash Table, Linked List
- */
+ 
 class LRUCache {
     constructor(capacity) {
         this.capacity = capacity;
@@ -3882,8 +3730,8 @@ class LRUCache {
     }
 }
 
-### 155. Min Stack
-Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+//155. Min Stack
+### Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 push(x) -- Push element x onto stack.
 pop() -- Removes the element on top of the stack.
@@ -3898,7 +3746,7 @@ minStack.getMin();   --> Returns -3.
 minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
- */
+ 
 //Stack, Design
 //Faster
 class MinStack {
@@ -3951,7 +3799,7 @@ Note:
 -1e7 <= x <= 1e7
 Number of operations won't exceed 10000.
 The last four operations won't be called when stack is empty.
- */
+ 
 class MaxStack {
     constructor() {
         this.stack = [];
@@ -4028,7 +3876,7 @@ Note:
 All keys and values will be in the range of [0, 1000000].
 The number of operations will be in the range of [1, 10000].
 Please do not use the built-in HashMap library.
- */
+ 
 class MyHashMap {
     constructor() {
         this.map = {};
@@ -4087,7 +3935,7 @@ All key/value strings have length in the range [1, 100]
 The timestamps for all TimeMap.set operations are strictly increasing.
 1 <= timestamp <= 10^7
 TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.
- */
+ 
 
 class TimeMap {
     constructor() {
@@ -4110,7 +3958,7 @@ class TimeMap {
     }
 }
 
-### fb, node as a key, array as a value
+/* fb, node as a key, array as a value
 Implement a simple store class with set(Node, value), get(Node) and has(Node) methods, which store a given Nodes with corresponding values.  
 
 Are you able to elaborate on this question? Can each node have multiple values or just 1?
@@ -4173,7 +4021,7 @@ class SimpleStore {
 If it needed to store multiple values against a node, then just change the single value for a Set or Array.
 
 The tricky part of the question was on how to store a DOM Node which is an object as an old javascript object key. I can't recall was it about 1 to 1 relationship or 1 to many, but it is really doesn't matter because the later gives just a small overhead. I suppose your solution is pretty what they were expected from the task, starting from explaining ES6 Map and ending up with an old javascript solution.
-*/
+
 
 class SimpleStore {
     constructor() {
@@ -4213,7 +4061,81 @@ class SimpleStoreOld {
     }
 }
 
-## Dynamic Programming Questions
+### 046. Permutations
+
+Given a collection of distinct integers, return all possible permutations.
+
+Example:
+
+Input: [1,2,3]
+Output:
+[
+[1,2,3],
+[1,3,2],
+[2,1,3],
+[2,3,1],
+[3,1,2],
+[3,2,1]
+]
+
+//Backtracking
+https://youtu.be/GCm7m5671Ps
+
+Time n * n!, Space n
+
+
+function permute(nums) {
+    const arr = [];
+    const res = [];
+    const len = nums.length;
+    const traverse = () => {
+        if (len === arr.length) {
+            res.push(arr.slice());
+        } else {
+            nums.forEach(n => {
+                if (arr.indexOf(n) === -1) {
+                    arr.push(n);
+                    traverse();
+                    arr.pop();
+                }
+            });
+        }
+    };
+    traverse();
+    return res;
+}
+
+### 22. Generate Parentheses
+
+Given n pairs of parentheses, 
+write a function to generate all combinations of well-formed parentheses.
+
+For example, given n = 3, a solution set is:
+
+[
+  "((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"
+]
+
+https://youtu.be/sz1qaKt0KGQ
+Backtracking
+ 
+function generateParenthesis(n) {
+    const res = [];
+    const traverse = (cur, open, close) => {
+        if (cur.length === n * 2) {
+            res.push(cur);
+        } else {
+            if (open < n) traverse(cur + '(', open + 1, close);
+            if (close < open) traverse(cur + ')', open, close + 1);
+        }
+    };
+    traverse('', 0, 0);
+    return res;
+}
 
 /* 
 198. House Robber
@@ -4246,7 +4168,7 @@ Total amount you can rob = 2 + 9 + 1 = 12.
 2: 0 or 1
 3: i + i - 2 or i - 1 
 4: previous (i - 1) sum vs previous previous (i - 2) sum + current value
-*/
+
 
 //Bottom-up Iterative
 function rob(nums) {
@@ -4276,8 +4198,7 @@ function robI(nums) {
     return second;
 }
 
-/**
- 70. Climbing Stairs
+###  70. Climbing Stairs
 
 You are climbing a stair case. It takes n steps to reach to the top.
 Each time you can either climb 1 or 2 steps. 
@@ -4303,7 +4224,7 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 
 https://youtu.be/NFJ3m9a1oJQ
-*/
+
 
 //Iterate
 function climbStairs(n) {
@@ -4377,8 +4298,7 @@ function fibonacciBM(n, map = []) {
     return map[n];
 }
 
-/*
-53. Maximum Subarray
+### 53. Maximum Subarray
 
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
@@ -4393,7 +4313,7 @@ If you have figured out the O(n) solution, try coding another solution using the
 max [i - 1] + [i], [i]
 
 https://youtu.be/2MmGzdiKR9Y
-*/
+
 
 function maxSubArray(nums) {
     let max = nums[0];
@@ -4416,8 +4336,7 @@ function maxSubArray(nums) {
     return max;
 }
 
-/*
-152. Maximum Product Subarray
+### 152. Maximum Product Subarray
 Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
 
 Example 1:
@@ -4430,7 +4349,7 @@ Example 2:
 Input: [-2,0,-1]
 Output: 0
 Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
-*/
+
 
 function maxProduct(nums) {
     let firstSmall = nums[0];
@@ -4464,7 +4383,7 @@ if they are valid.
 1, 2, 3, 4...
 
 if they are not valid, - 1 / - 1
-*/
+
 
 function numDecodings(s) {
     if (s.length === 0) return 0;
@@ -4494,88 +4413,8 @@ function numDecodings(s) {
     return map[len];
 }
 
-## Permutation and Backtracking
 
-/*
-046. Permutations
-
-Given a collection of distinct integers, return all possible permutations.
-
-Example:
-
-Input: [1,2,3]
-Output:
-[
-[1,2,3],
-[1,3,2],
-[2,1,3],
-[2,3,1],
-[3,1,2],
-[3,2,1]
-]
-
-//Backtracking
-https://youtu.be/GCm7m5671Ps
-
-Time n * n!, Space n
-*/
-
-function permute(nums) {
-    const arr = [];
-    const res = [];
-    const len = nums.length;
-    const traverse = () => {
-        if (len === arr.length) {
-            res.push(arr.slice());
-        } else {
-            nums.forEach(n => {
-                if (arr.indexOf(n) === -1) {
-                    arr.push(n);
-                    traverse();
-                    arr.pop();
-                }
-            });
-        }
-    };
-    traverse();
-    return res;
-}
-
-/**
-22. Generate Parentheses
-
-Given n pairs of parentheses, 
-write a function to generate all combinations of well-formed parentheses.
-
-For example, given n = 3, a solution set is:
-
-[
-  "((()))",
-  "(()())",
-  "(())()",
-  "()(())",
-  "()()()"
-]
-
-https://youtu.be/sz1qaKt0KGQ
-Backtracking
- */
-function generateParenthesis(n) {
-    const res = [];
-    const traverse = (cur, open, close) => {
-        if (cur.length === n * 2) {
-            res.push(cur);
-        } else {
-            if (open < n) traverse(cur + '(', open + 1, close);
-            if (close < open) traverse(cur + ')', open, close + 1);
-        }
-    };
-    traverse('', 0, 0);
-    return res;
-}
-
-/**
-384. Shuffle an Array
+### 384. Shuffle an Array
 Shuffle a set of numbers without duplicates.
 
 Example:
@@ -4593,7 +4432,7 @@ solution.reset();
 
 // Returns the random shuffling of array [1,2,3].
 solution.shuffle();
- */
+ 
 class Solution {
     constructor(nums) {
         this.nums = nums;
@@ -4636,9 +4475,6 @@ class SolutionBF {
 const sol = new Solution([1, 2, 3]);
 console.log(sol.shuffle());
 
-
-## Tree Questions
-
 //https://coderbyte.com/algorithm/tree-traversal-algorithms
 class TreeNode {
     constructor(val) {
@@ -4671,12 +4507,11 @@ function getBSTData() {
     };
 }
 
-/*
-Pre-order, DFS
+### Pre-order, DFS
 1) Return the root node value.
 2) Traverse the left subtree by recursively calling the pre-order function.
 3) Traverse the right subtree by recursively calling the pre-order function.
- */
+ 
 function preOrder(root) {
     if (!root) return [];
     const values = [];
@@ -4689,15 +4524,14 @@ function preOrder(root) {
     return values;
 }
 
-/*
-In-order, DFS
+### In-order, DFS
 1) Traverse the left subtree by recursively calling the in-order function.
 2) Return the root node value.
 3) Traverse the right subtree by recursively calling the in-order function.
 
 1. recursive
 2. iterate
- */
+ 
 function inOrder(root) {
     if (!root) return [];
     const values = [];
@@ -4710,9 +4544,8 @@ function inOrder(root) {
     return values;
 }
 
-/*
-In-order Iterate
-*/
+### In-order Iterate
+
 function inOrderI(node) {
     if (!node) return [];
     const values = [];
@@ -4732,12 +4565,11 @@ function inOrderI(node) {
     return values;
 }
 
-/*
-Post-Order, DFS
+### Post-Order, DFS
 1) Traverse the left subtree by recursively calling the post-order function.
 2) Traverse the right subtree by recursively calling the post-order function.
 3) Return the root node value.
- */
+ 
 function postOrder(root) {
     if (!root) return [];
     const values = [];
@@ -4750,12 +4582,11 @@ function postOrder(root) {
     return values;
 }
 
-/*
-Level-Order, BFS
+### Level-Order, BFS
 1) Add the root to a queue.
 2) Pop the last node from the queue, and return its value.
 3) Add all children of popped node to queue, and continue from step 2 until queue is empty.
- */
+ 
 
 function levelOrder(node) {
     if (!node) return [];
@@ -4771,8 +4602,7 @@ function levelOrder(node) {
     return values;
 }
 
-/*
-98. Validate Binary Search Tree
+### 98. Validate Binary Search Tree
 
 Given a binary tree, determine if it is a valid binary search tree (BST).
 
@@ -4804,7 +4634,7 @@ Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 
 O(n), O(n)
-*/
+
 //Tree, DFS, recursive, preOrder
 function isValidBST(node) {
     if (!node) return true;
@@ -4843,8 +4673,7 @@ function isValidBSTI(node) {
     return true;
 }
 
-/*
-    230. Kth Smallest Element in a BST
+###     230. Kth Smallest Element in a BST
     Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
 
 Note: 
@@ -4872,7 +4701,7 @@ Input: root = [5,3,6,2,4,null,null,1], k = 3
 Output: 3
 Follow up:
 What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
-    */
+    
 function kthSmallest(node, k) {
     if (!node) return null;
     const stack = [];
@@ -4890,8 +4719,7 @@ function kthSmallest(node, k) {
     return null;
 }
 
-/*
-101. Symmetric Tree
+### 101. Symmetric Tree
 
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
@@ -4910,7 +4738,7 @@ But the following [1,2,2,null,3,null,3] is not:
 3    3
 Note:
 Bonus points if you could solve it both recursively and iteratively.
-*/
+
 
 //DFS
 function isSymmetric(node) {
@@ -4944,8 +4772,7 @@ function isSymmetricQueue(node) {
     return true;
 }
 
-/*
-102. Binary Tree Level Order Traversal
+### 102. Binary Tree Level Order Traversal
 
 Given a binary tree, return the level order traversal of its nodes' values. 
 (ie, from left to right, level by level).
@@ -4964,7 +4791,7 @@ return its level order traversal as:
 [15,7]
 ]
 
-*/
+
 
 //Iteration
 function levelOrderBFS(node) {
@@ -4999,8 +4826,7 @@ function levelOrderPreOrder(node) {
 }
 
 
-/*
-104. Maximum Depth of Binary Tree
+### 104. Maximum Depth of Binary Tree
 
 Given a binary tree, find its maximum depth.
 
@@ -5019,7 +4845,7 @@ Given binary tree [3,9,20,null,null,15,7],
     /  \
 15   7
 return its depth = 3.
-*/
+
 //Preorder
 function maxDepthPreOrder(node) {
     if (!node) return 0;
@@ -5051,8 +4877,7 @@ function maxDepthInOrder(node) {
     return maxDepth;
 }
 
-/*
-108. Convert Sorted Array to Binary Search Tree
+### 108. Convert Sorted Array to Binary Search Tree
 
 Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
 
@@ -5070,7 +4895,7 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
 -3   9
 /   /
 -10  5
-*/
+
 
 function sortedArrayToBST(nums) {
     if (!nums || !nums.length) return null;
@@ -5087,8 +4912,7 @@ function sortedArrayToBST(nums) {
     return traverse(0, nums.length - 1);
 }
 
-/*
-235. Lowest Common Ancestor of a Binary Search Tree
+### 235. Lowest Common Ancestor of a Binary Search Tree
 Given a binary search tree (BST), 
 find the lowest common ancestor (LCA) of two given nodes in the BST.
 
@@ -5116,7 +4940,7 @@ Note:
 
 All of the nodes' values will be unique.
 p and q are different and both values will exist in the BST.
- */
+ 
 
 function lowestCommonAncestor(node, p, q) {
     const pVal = p.val;
@@ -5147,8 +4971,7 @@ function lowestCommonAncestorR(root, p, q) {
     }
 }
 
-/*
-236. Lowest Common Ancestor of a Binary Tree
+### 236. Lowest Common Ancestor of a Binary Tree
 1. When meets p or q, return the pointer. There is no p or q, return null
 https://youtu.be/13m9ZCB8gjw
 ---
@@ -5179,7 +5002,7 @@ Note:
 
 All of the nodes' values will be unique.
 p and q are different and both values will exist in the binary tree.
- */
+ 
 function lowestCommonAncestorBT(node, p, q) {
     if (!node) return null;
     if (node === p || node === q) return node;
@@ -5191,8 +5014,7 @@ function lowestCommonAncestorBT(node, p, q) {
     if (right) return right;
 }
 
-/*
-669. Trim a Binary Search Tree
+### 669. Trim a Binary Search Tree
 Given a binary search tree and the lowest and highest boundaries as L and R, 
 trim the tree so that all its elements lies in [L, R] (R >= L). 
 You might need to change the root of the tree, 
@@ -5230,7 +5052,7 @@ Output:
 2   
 /
 1
-*/
+
 
 function trimBST(node, L, R) {
     if (!node) return null;
@@ -5273,7 +5095,7 @@ return its zigzag level order traversal as:
 [20,9],
 [15,7]
 ]
-*/
+
 
 function zigzagLevelOrderPreOrder(node) {
     if (!node) return [];
@@ -5316,8 +5138,7 @@ function zigzagLevelOrderBFS(node) {
 
 
 
-/*
-173. Binary Search Tree Iterator
+### 173. Binary Search Tree Iterator
 
 Implement an iterator over a binary search tree (BST). 
 Your iterator will be initialized with the root node of a BST.
@@ -5343,7 +5164,7 @@ Note:
 next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
 You may assume that next() call will always be valid, that is, there will be at least a next smallest number in the BST when next() is called.
 
- */
+ 
 class BSTIterator {
     constructor(root) {
         this.stack = [];
@@ -5365,8 +5186,7 @@ class BSTIterator {
     }
 }
 
-/*
-297. Serialize and Deserialize Binary Tree
+### 297. Serialize and Deserialize Binary Tree
 Serialization is the process of converting a data structure or object 
 into a sequence of bits so that it can be stored in a file or memory buffer, 
 or transmitted across a network connection link 
@@ -5395,7 +5215,7 @@ so please be creative and come up with different approaches yourself.
 
 Note: Do not use class member/global/static variables to store states. 
 Your serialize and deserialize algorithms should be stateless.
- */
+ 
 
 class Serializer {
     //PreOrder
@@ -5432,8 +5252,7 @@ class Serializer {
 }
 
 
-/*
-getElementsByClassName()
+### getElementsByClassName()
 Q. Given 2 identical DOM trees (but not equal) and one element of the first DOM tree, 
 how would you find this element in the second DOM tree?
 Does it has a ID or class name or data-* attribute? then we can user querySelector. 
@@ -5464,7 +5283,7 @@ querySelector('[data-id]="abc"')
 
 1. collect indices
 2. find node
-*/
+
 
 function getPath(root, node) {
     const path = [];
@@ -5483,14 +5302,13 @@ function findNode(node, path) {
     return node;
 }
 
-/*
-const root = document.querySelector('#root1');
+### const root = document.querySelector('#root1');
 const node = root.querySelector('#node1');
 const targetRoot = document.querySelector('#root2');
 const path = getPath(root, node);
 const targetNode = findNode(targetRoot, path);
 console.log(targetNode.id);
-*/
+
 
 function getElementsByClassName(dom, className) {
     if (!dom) return null;
@@ -5519,10 +5337,9 @@ function getElementsByClassNameR(dom, className) {
     return doms;
 }
 
-/**
-If you know the value that you are looking for is closer to the top, a BFS approach might be a superior choice, 
+### If you know the value that you are looking for is closer to the top, a BFS approach might be a superior choice, 
 but if a tree is very wide and not too deep, a DFS approach might be faster and more efficient.
- */
+ 
 //level order
 function findDomBFS(el, id) {
     if (!el) return null;
@@ -5542,11 +5359,7 @@ function findDomBFS(el, id) {
     return null;
 }
 
-
-## Graph
-
-/*
-Graphs: There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list); 
+### Graphs: There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list); 
 know each representation and its pros & cons. 
 Know the basic graph traversal algorithms: breadth-first search & depth-first search. 
 Know their computational complexity, their tradeoffs, and how to implement them in real code. Time permitting, study fancier algorithms such as Dijkstra and A*.
@@ -5566,7 +5379,7 @@ Graph Representation
 https://youtu.be/gXgEDyodOJU
 Graph BFS & DFS
 https://youtu.be/pcKY4hjDrxk
-*/
+
 //DFS pseudocode, visit all nodes
 function searchDFS(node) {
     if (!node) return;
@@ -5598,8 +5411,7 @@ function shortPathBFS(node) {
     }
 }
 
-/**
-133. Clone Graph
+### 133. Clone Graph
 Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.
 
 Example:
@@ -5645,7 +5457,7 @@ The number of nodes will be between 1 and 100.
 The undirected graph is a simple graph, which means no repeated edges and no self-loops in the graph.
 Since the graph is undirected, if node p has node q as neighbor, then node q must have node p as neighbor too.
 You must return the copy of the given node as a reference to the cloned graph.
-*/
+
 
 function cloneGraph(node, map = {}) {
     if (!node) return null;
@@ -5679,6 +5491,78 @@ function cloneGraph(node) {
 }
 
 
+//https://khan4019.github.io/front-end-Interview-Questions/sort.html#quickSort
+//https://pediaa.com/what-is-the-difference-between-quicksort-and-merge-sort/
+//https://www.youtube.com/watch?v=COk73cpQbFQ
+//n log n / log n (in-place)
+// [4,6,9,1,2,5,3]
+// [3,2,1,4,6,9,5]
+//        4
+//  3,2,1    6,9,5
+//      3      6
+//  2,1      5  9
+//    2
+//  1
+
+function quickSort(arr) {
+  const partition = (left, right) => {
+    let idx = left;
+    const pivot = arr[right];
+    for (let i = left; i < right; i++) {
+      if (arr[i] < pivot) {
+        [arr[i], arr[idx]] = [arr[idx], arr[i]];
+        idx++;
+      }
+    }
+    [arr[right], arr[idx]] = [arr[idx], arr[right]];
+    return idx;
+  };
+  const traverse = (left, right) => {
+    if (left >= right) return;
+    const idx = partition(left, right);
+    traverse(left, idx - 1);
+    traverse(idx + 1, right);
+  };
+  traverse(0, arr.length - 1);
+  return arr;
+}
+
+quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]);
+
+//MergeSort
+// Split the array into halves and merge them recursively 
+//https://youtu.be/TzeBrDU-JaY
+//https://youtu.be/0nlPxaC2lTw
+//n log n / n
+function mergeSort(arr) {
+  //divide to 1 member.
+  if (arr.length === 1) return arr;
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
+
+  const merge = (left, right) => {
+    const res = [];
+    let li = 0;
+    let ri = 0;
+    while (li < left.length && ri < right.length) {
+      if (left[li] < right[ri]) {
+        res.push(left[li]);
+        li++;
+      } else {
+        res.push(right[ri]);
+        ri++;
+      }
+    }
+    return res.concat(left.slice(li)).concat(right.slice(ri));
+  };
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+mergeSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]);
+
+
 ## Optional - Linked List 
 
 class ListNode {
@@ -5688,8 +5572,7 @@ class ListNode {
     }
 }
 
-/**
-19. Remove Nth Node From End of List
+### 19. Remove Nth Node From End of List
 
 Given a linked list, remove the n-th node from the end of list and return its head.
 
@@ -5705,7 +5588,7 @@ Given n will always be valid.
 Follow up:
 
 Could you do this in one pass?
-*/
+
 function removeNthFromEnd(head, n) {
     const res = new ListNode(0);
     //save the start point
@@ -5727,8 +5610,7 @@ function removeNthFromEnd(head, n) {
     return res.next;
 }
 
-/**
-2. Add Two Numbers
+### 2. Add Two Numbers
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -5738,7 +5620,7 @@ Example:
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
-*/
+
 function addTwoNumbers(l1, l2) {
     const res = new ListNode(0);
     //for calc
@@ -5763,8 +5645,7 @@ function addTwoNumbers(l1, l2) {
     return res.next;
 }
 
-/**
-21. Merge Two Sorted Lists
+### 21. Merge Two Sorted Lists
 
 Merge two sorted linked lists and return it as a new list. 
 The new list should be made by splicing together the nodes of the first two lists.
@@ -5773,7 +5654,7 @@ Example:
 
 Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
-*/
+
 function mergeTwoLists(l1, l2) {
     const res = new ListNode(0);
     let temp = res;
@@ -5812,8 +5693,7 @@ function mergeTwoLists(l1, l2) {
     }
 }
 
-/**
-141. Linked List Cycle
+### 141. Linked List Cycle
 
 Given a linked list, determine if it has a cycle in it.
 
@@ -5844,7 +5724,7 @@ Explanation: There is no cycle in the linked list.
 Follow up:
 
 Can you solve it using O(1) (i.e. constant) memory?
-*/
+
 function hasCycle(node) {
     if (!node || !node.next) return false;
     let first = node;
@@ -5857,8 +5737,7 @@ function hasCycle(node) {
     return true;
 }
 
-/**
-206. Reverse Linked List
+### 206. Reverse Linked List
 Reverse a singly linked list.
 
 Example:
@@ -5868,7 +5747,7 @@ Output: 5->4->3->2->1->NULL
 Follow up:
 
 A linked list can be reversed either iteratively or recursively. Could you implement both?
-*/
+
 //prev = node, next = prev O(n), O(1)
 
 function reverseList(node) {
@@ -5899,8 +5778,7 @@ function reverseList(node) {
     return root;
 }
 
-/**
-234. Palindrome Linked List
+### 234. Palindrome Linked List
 Given a singly linked list, determine if it is a palindrome.
 
 Example 1:
@@ -5913,7 +5791,7 @@ Input: 1->2->2->1
 Output: true
 Follow up:
 Could you do it in O(n) time and O(1) space?
-*/
+
 function isPalindrome(head) {
     if (!head || !head.next) return true;
     let fast = head;
@@ -5940,8 +5818,7 @@ function isPalindrome(head) {
     return true;
 }
 
-/**
-237. Delete Node in a Linked List
+### 237. Delete Node in a Linked List
 Write a function to delete a node (except the tail) in a singly linked list, 
 given only access to that node.
 
@@ -5967,7 +5844,7 @@ All of the nodes' values will be unique.
 The given node will not be the tail 
 and it will always be a valid node of the linked list.
 Do not return anything from your function.
- */
+ 
 
 function deleteNode(node) {
     node.val = node.next.val;

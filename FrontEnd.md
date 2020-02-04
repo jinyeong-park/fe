@@ -466,3 +466,13 @@ assumption it has data-id="abc"
 ### Q. Implement Calendar
 
 ### Q. Implement Tooltip
+
+### Q. Design a feature like Amazon's recommendation system, except fill it with orders of a person's friends.
+
+Now what if multiple people ordered the same thing, and we want to return the orders from most purchased to least purchased?
+Now what if someone purchased multiple of the same item and we only want one copy of that counted?
+Now what if we want to extend this to friends of friends?
+
+Now I want to add a button within each cell to remove a label from the screen
+Now I want to be able sort the labels, how would I do that? How is this effected by the removing of the labels?
+You now notice that what is being returned from the AJAX call is not the same as before, what steps do you take to solve the problem?
