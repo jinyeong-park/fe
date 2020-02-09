@@ -169,3 +169,150 @@ The number of operations will be in the range of [1, 10000].
 Please do not use the built-in HashMap library.
 
 Don't use Map object.
+
+
+```
+var pivotIndex = function (nums){
+  let sum = 0;
+  let leftSum = 0;
+
+  for (let n of nums){
+    sum += n;
+  }
+
+  for (let i = 0; i < nums.length; i++){
+    if (sum === 2 * leftSum + nums[i]) return i;
+    leftSum += nums[i];
+  }
+  return -1;
+}
+
+var arr = [1, 9, 3, 6, 5, 6, 2];
+var x = pivotIndex(arr);
+console.log(x);
+
+--------------------------------------------------------------------
+var dominantIndex = function(nums){
+  var max = -Infinity;
+  var secondMax = -Infinity;
+  var maxIndex  = 0;
+
+  for (let i = 0; i < nums.length; i++){
+    if (nums[i] > max){
+      secondMax = max;
+      max = nums[i];
+      maxIndex = i;
+    } else if (nums[i] > secondMax) {
+      secondMax = nums[i];
+    }
+  }
+
+  return (max >= secondMax * 2) ? maxIndex : -1;
+};
+
+var a = [1,2,5,25,4,3];
+dominantIndex(a);
+
+------------------------------------------------------------------------------
+
+var plusOne = function(digits) {
+  for (let i = digits.length - 1; i >= 0; i--){
+    digits[i] += 1;
+    if (digits[i] !== 10) return digits;
+    digits[i] = 0;
+    console.log(digits);
+  }
+  digits.unshift(1);
+  return digits;
+};
+
+var a = [9, 9, 9];
+console.log(plusOne(a));
+
+------------------------------------------------------------------------------
+//Diagonal Traverse
+
+var finddiagonalOrder = function(matrix) {
+  let row = 0;
+  let col = 0;
+  let numberOfCell = matrix.length * matrix[0].length;
+  const move = [-1, 1];
+  const reverse = function() {
+    move[0] *= -1;
+    move[1] *= -1;
+  }
+  const output = [];
+
+  while (numberOfCell--) {
+      output.push(matrix[row][col]);
+      row += move[0];
+      col += move[1];
+
+      if (row === matrix.length) {
+        console.log(move);
+        reverse();
+        console.log(move);
+        row -= 1;
+        col += 2;
+      } else if (col === matrix[0].length) {
+        reverse();
+        col -= 1;
+        row += 2;
+      } else if (row === -1) {
+        reverse();
+        row = 0;
+      } else if (col === -1) {
+        reverse();
+        col = 0;
+      }
+  }
+
+  return output;
+}
+
+var mat = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+finddiagonalOrder(mat);
+
+------------------------------------------------------------------------------
+//Spiral Matrix
+var SpiralOrder = function(matrix){
+    let row = 0;
+    let col = -1;
+    let direction = 0;
+    const lengths = [matrix[0].length, matrix.length - 1];
+    const move = [
+          [0, 1],
+          [1, 0],
+          [0, -1],
+          [-1, 0],
+    ]
+    const output = [];
+
+    while(lengths[direction % 2]) {
+      console.log(lengths);
+      console.log(direction % 2);
+      console.log(lengths[direction % 2]);
+        for (let i = 0; i < lengths[direction % 2]; i++) {
+          row += move[direction][0];
+          col += move[direction][1];
+          output.push(matrix[row][col]);
+          console.log(row + ", "+ col);
+        }
+        lengths[direction % 2] -= 1;
+        direction = (direction + 1) % 4;
+    }
+    return output;
+}
+
+
+var mat = [[1,   2,  3,  4], 
+           [5,   6,  7,  8], 
+           [9,  10, 11, 12],
+           [13, 14, 15, 16]]
+SpiralOrder(mat);
+
+
+------------------------------------------------------------------------------
+
+  
+```
