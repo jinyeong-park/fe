@@ -152,6 +152,7 @@ Closures create encapsulation.
 <https://youtu.be/dHYhMP8ESuk>
 
 ```
+// IIFE
 (function autorun(p) {
     let x = 1;
     setTimeout(() => {
@@ -182,7 +183,7 @@ todo.toString = function () {};
 for (var i = 0; i < 5; i++) {
     var btn = document.createElement('button');
     btn.appendChild(document.createTextNode('Button ' + i));
-    btn.addEventListener('click', (e) => console.log(e.target.tagName, i)); //always 5, it accesses the i after finishing for loop
+    btn.addEventListener('click', (e) => console.log(e.target.tagName, i)); //always 4, it accesses the i after finishing for loop
     document.body.appendChild(btn);
 }
 
@@ -191,12 +192,15 @@ for (var i = 0; i < 5; i++) {
     btn.appendChild(document.createTextNode('Button ' + i));
     btn.addEventListener('click', ((i) => (e) => console.log(e.target.tagName, i))(i));
     // btn.addEventListener('click', 
-    //     ((i) => {
-    //         return () => console.log(i);
+    //     ((b) => {
+    //         return () => console.log(b);
     //     })(i)
     // );
     document.body.appendChild(btn);
 }
+
+
+
 //let
 for (let i = 0; i < 5; i++) {
     var btn = document.createElement('button');

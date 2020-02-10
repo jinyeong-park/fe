@@ -461,7 +461,7 @@ Does it has a ID or class name or data-* attribute? then we can user querySelect
 it has the same innerHTML?
 assumption it has data-id="abc"
 
-### Q. Implement getElementsByClassName()
+### Q. Implement getElementsByClassName('.selected')
 
 ### Q. Implement Calendar
 

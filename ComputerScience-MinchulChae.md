@@ -70,6 +70,7 @@ Explanation: One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3; 1 + 4*2 +
 Link: <https://leetcode.com/problems/nested-list-weight-sum/>
 
 ### 341. Flatten Nested List Iterator
+
 Given a nested list of integers, implement an iterator to flatten it.
 
 Each element is either an integer, or a list 
@@ -90,7 +91,8 @@ Explanation: By calling next repeatedly until hasNext returns false,
 
 Link: <https://leetcode.com/problems/flatten-nested-list-iterator/>
 
-## 155. Min Stack
+### 155. Min Stack
+
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 push(x) -- Push element x onto stack.
@@ -107,7 +109,8 @@ minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
 
-## 706. Design HashMap
+### 706. Design HashMap
+
 Design a HashMap without using any built-in hash table libraries.
 
 To be specific, your design should include these functions:
@@ -140,6 +143,7 @@ Please do not use the built-in HashMap library.
 Don't use Map object.
 
 ### 796. Ratate String
+
 We are given two strings, A and B.
 
 A shift on A consists of taking string A and moving the leftmost character to the rightmost position. For example, if A = 'abcde', then it will be 'bcdea' after one shift on A. Return True if and only if A can become B after some number of shifts on A.
@@ -262,7 +266,6 @@ var actualWord = findFirstWordWithMostRepeatedChars(str);
 var expectedWord = "banana";
 console.log(actualWord, expectedWord, "display");
 ```
-
 
 ## Number Questions
 ### 1. Two Sum
