@@ -48,7 +48,7 @@ function discountPrices(prices, discount) {
 }
 ```
 
-### Q. Can you give an example for destructuring an object or an array?
+### Q. Can you give an example of destructuring an object or an array?
 
 ```Javascript
 #!Javascript
