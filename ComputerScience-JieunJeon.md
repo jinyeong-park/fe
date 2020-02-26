@@ -488,4 +488,21 @@ class Solution:
 
 ```
 
+**Isograms**
+An isogram is a word that has no repeating letters, consecutive or non-consecutive. Your task is to write and test a function that determines whether a string is an isogram, following the format of the previous problems. It should return true if the input string is an isogram, and should return false otherwise.
 
+While you should create your own test suite to get the most out of this exercise, there are automated tests provided as well.
+
+Notes:
+
+Assume your input is only letters. Assume the empty string is an isogram. Ignore case. Follow the pseudocode exactly!
+
+```python
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        return len(set(zip(s, t))) == len(set(s)) == len(set(t))
+    
+    def isIsomorphic5(self, s, t):
+        return map(s.find, s) == map(t.find, t)
+
+```
