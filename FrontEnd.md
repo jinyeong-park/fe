@@ -20,6 +20,8 @@
 
 ### Q. Explain how "this" works in JavaScript. Can you give an example of one of the ways that working with "this" has changed in ES6?
 
+### Q. https://babeljs.io/ ?
+
 ### Q. Explain "Closure" with examples. What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays? 
 
 ### Q. Explain ES6 "Map" and "Set"
@@ -461,7 +463,7 @@ Does it has a ID or class name or data-* attribute? then we can user querySelect
 it has the same innerHTML?
 assumption it has data-id="abc"
 
-### Q. Implement getElementsByClassName()
+### Q. Implement getElementsByClassName('.selected')
 
 ### Q. Implement Calendar
 
