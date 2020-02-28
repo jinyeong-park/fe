@@ -10,7 +10,23 @@
 <https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e>
 
 ## Q. Can you give an example for destructuring an object or an array?
+```js
+// destructuring an object
+const person = {
+  firstName: "Nick",
+  lastName: "Anderson",
+  age: 35,
+  sex: "M"
+}
 
+const { firstName: first, age, city = "Paris" } = person; 
+
+// destructuring an object
+const myArray = ["a", "b", "c"];
+
+const [x, y] = myArray;
+
+```
 ## Q. ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
 
 ## Q. What are the benefits of using spread syntax and how is it different from rest syntax?
