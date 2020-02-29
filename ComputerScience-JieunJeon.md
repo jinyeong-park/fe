@@ -506,3 +506,71 @@ class Solution:
         return map(s.find, s) == map(t.find, t)
 
 ```
+
+
+### 125. Valid Palindrome
+
+Given a string, determine if it is a palindrome, 
+considering only alphanumeric characters and ignoring cases.
+
+Note: For the purpose of this problem, we define empty string as valid palindrome.
+
+Example 1:
+
+Input: "A man, a plan, a canal: Panama"
+Output: true
+
+Example 2:
+
+Input: "race a car"
+Output: false
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        left, right = 0, len(s) - 1  
+        while left < right:
+            if s[left].isalnum() and s[right].isalnum():
+                if s[left].lower() != s[right].lower(): 
+                    return False
+                else:
+                    left += 1
+                    right -= 1
+            elif not s[left].isalnum():  # left is not a alphanumeric, then move left
+                left += 1
+            else:  # right is not a alphanumeric, then move right
+                right -= 1
+        return True
+
+```
+
+
+### 680. Valid Palindrome II
+
+Given a non-empty string s, you may delete at most one character. 
+Judge whether you can make it a palindrome.
+
+Example 1:
+Input: "aba"
+Output: True
+
+Example 2:
+Input: "abca"
+Output: True
+Explanation: You could delete the character 'c'.
+Note:
+The string will only contain lowercase characters a-z. 
+The maximum length of the string is 50000.
+
+### 5. Longest Palindromic Substring
+
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+
+Example 1:
+
+Input: "babad"
+Output: "bab"
+Note: "aba" is also a valid answer.
+Example 2:
+
+Input: "cbbd"
+Output: "bb"
