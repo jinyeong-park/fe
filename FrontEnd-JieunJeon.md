@@ -128,13 +128,23 @@ console.log(b);
 ### Q. What's the difference between feature detection, feature inference, and using the UA string?
 
 ### Q. Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+```
+ASK(?)
+```
 
 ### Q. Why is extending built-in JavaScript objects not a good idea?
-
+```
+ASK(?)
+```
 ### Q. Explain the same-origin policy with regards to JavaScript.
-
+```
+ASK(?)
+what is the difference between this and CORS?
+```
 ### Q. How can you share code between files?
-
+```
+ASK(?)
+```
 ### Q. Why you might want to create static class members?
 
 ### Q. What are the differences between Long-Polling, Websockets and Server-Sent Events?
@@ -148,6 +158,16 @@ console.log(b);
 ### Q. What tools would you use to test your code's functionality?
 
 ### Q. What is the difference between a unit test and a functional/integration test?
+
+### Q. Cookes & Sessions. What is the difference, why use it, and how to use it
+```
+reason to use it: to store user login info. So user do not logged out even they visited another website.
+
+ASK(?) 자동으로 생성되는건가?
+
+참고: https://jeong-pro.tistory.com/80
+```
+### Q. ajax통신의 경우 외부에서 접근하여 데이터를 가로챌 수도 있다. 이부분에 대해 해결 방법은 무엇이 있을것같나?
 
 ## CSS Question
 
