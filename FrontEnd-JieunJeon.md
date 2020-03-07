@@ -30,7 +30,9 @@ const [x, y] = myArray;
 #### Q. ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
 
 ### Q. What are the benefits of using spread syntax and how is it different from rest syntax?
-
+```
+deep copy
+```
 ### Q. Explain how "this" works in JavaScript. Can you give an example of one of the ways that working with "this" has changed in ES6?
 ```
 - this: the object that is executing the currecnt function
@@ -42,7 +44,28 @@ const [x, y] = myArray;
 ```
 
 ### Q. https://babeljs.io/ ?
+```
+Babel with React:
 
+Before React code can run in the browser, it must be changed in certain ways. One necessary transformation is compiling JSX into vanilla JavaScript.
+
+Transfile JSX into Vanilla JS
+
+1. Parsing
+2. Transforming
+3. Printing
+
+webpack: babel-loader
+바벨은 일관적인 방식으로 코딩하면서, 다양한 브라우져에서 돌아가는 어플리케이션을 만들기 위한 도구다.
+
+바벨의 코어는 파싱과 출력만 담당하고 변환 작업은 플러그인이 처리한다.
+
+여러 개의 플러그인들을 모아놓은 세트를 프리셋이라고 하는데 ECMAScript+ 환경은 env 프리셋을 사용한다.
+
+바벨이 변환하지 못하는 코드는 폴리필이라 부르는 코드조각을 불러와 결과물에 로딩해서 해결한다.
+
+babel-loader로 웹팩과 함께 사용하면 훨씬 단순하고 자동화된 프론트엔드 개발환경을 갖출 수 있다.
+```
 ### Q. Explain "Closure" with examples. What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays? 
 
 ### Q. Explain ES6 "Map" and "Set"
